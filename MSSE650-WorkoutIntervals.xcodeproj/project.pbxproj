@@ -1,0 +1,406 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7470D77A1A72E440006C462E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470D7791A72E440006C462E /* main.m */; };
+		7470D77D1A72E440006C462E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470D77C1A72E440006C462E /* AppDelegate.m */; };
+		7470D7851A72E440006C462E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7470D7841A72E440006C462E /* Images.xcassets */; };
+		7470D7941A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470D7931A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m */; };
+		7470D7A01A72E4DB006C462E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470D79E1A72E4DB006C462E /* MainViewController.m */; };
+		7470D7A11A72E4DB006C462E /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7470D79F1A72E4DB006C462E /* MainViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7470D78E1A72E440006C462E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7470D76C1A72E440006C462E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7470D7731A72E440006C462E;
+			remoteInfo = "MSSE650-WorkoutIntervals";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7470D7741A72E440006C462E /* MSSE650-WorkoutIntervals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MSSE650-WorkoutIntervals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7470D7781A72E440006C462E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7470D7791A72E440006C462E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7470D77B1A72E440006C462E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7470D77C1A72E440006C462E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7470D7841A72E440006C462E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7470D78D1A72E440006C462E /* MSSE650-WorkoutIntervalsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MSSE650-WorkoutIntervalsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7470D7921A72E440006C462E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7470D7931A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSE650_WorkoutIntervalsTests.m; sourceTree = "<group>"; };
+		7470D79D1A72E4DB006C462E /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		7470D79E1A72E4DB006C462E /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		7470D79F1A72E4DB006C462E /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7470D7711A72E440006C462E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7470D78A1A72E440006C462E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7470D76B1A72E440006C462E = {
+			isa = PBXGroup;
+			children = (
+				7470D7761A72E440006C462E /* MSSE650-WorkoutIntervals */,
+				7470D7901A72E440006C462E /* MSSE650-WorkoutIntervalsTests */,
+				7470D7751A72E440006C462E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7470D7751A72E440006C462E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7470D7741A72E440006C462E /* MSSE650-WorkoutIntervals.app */,
+				7470D78D1A72E440006C462E /* MSSE650-WorkoutIntervalsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7470D7761A72E440006C462E /* MSSE650-WorkoutIntervals */ = {
+			isa = PBXGroup;
+			children = (
+				7470D77B1A72E440006C462E /* AppDelegate.h */,
+				7470D77C1A72E440006C462E /* AppDelegate.m */,
+				7470D7841A72E440006C462E /* Images.xcassets */,
+				7470D7771A72E440006C462E /* Supporting Files */,
+				7470D79D1A72E4DB006C462E /* MainViewController.h */,
+				7470D79E1A72E4DB006C462E /* MainViewController.m */,
+				7470D79F1A72E4DB006C462E /* MainViewController.xib */,
+			);
+			path = "MSSE650-WorkoutIntervals";
+			sourceTree = "<group>";
+		};
+		7470D7771A72E440006C462E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7470D7781A72E440006C462E /* Info.plist */,
+				7470D7791A72E440006C462E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7470D7901A72E440006C462E /* MSSE650-WorkoutIntervalsTests */ = {
+			isa = PBXGroup;
+			children = (
+				7470D7931A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m */,
+				7470D7911A72E440006C462E /* Supporting Files */,
+			);
+			path = "MSSE650-WorkoutIntervalsTests";
+			sourceTree = "<group>";
+		};
+		7470D7911A72E440006C462E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7470D7921A72E440006C462E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7470D7731A72E440006C462E /* MSSE650-WorkoutIntervals */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7470D7971A72E440006C462E /* Build configuration list for PBXNativeTarget "MSSE650-WorkoutIntervals" */;
+			buildPhases = (
+				7470D7701A72E440006C462E /* Sources */,
+				7470D7711A72E440006C462E /* Frameworks */,
+				7470D7721A72E440006C462E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MSSE650-WorkoutIntervals";
+			productName = "MSSE650-WorkoutIntervals";
+			productReference = 7470D7741A72E440006C462E /* MSSE650-WorkoutIntervals.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7470D78C1A72E440006C462E /* MSSE650-WorkoutIntervalsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7470D79A1A72E440006C462E /* Build configuration list for PBXNativeTarget "MSSE650-WorkoutIntervalsTests" */;
+			buildPhases = (
+				7470D7891A72E440006C462E /* Sources */,
+				7470D78A1A72E440006C462E /* Frameworks */,
+				7470D78B1A72E440006C462E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7470D78F1A72E440006C462E /* PBXTargetDependency */,
+			);
+			name = "MSSE650-WorkoutIntervalsTests";
+			productName = "MSSE650-WorkoutIntervalsTests";
+			productReference = 7470D78D1A72E440006C462E /* MSSE650-WorkoutIntervalsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7470D76C1A72E440006C462E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Taylor Frey";
+				TargetAttributes = {
+					7470D7731A72E440006C462E = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					7470D78C1A72E440006C462E = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 7470D7731A72E440006C462E;
+					};
+				};
+			};
+			buildConfigurationList = 7470D76F1A72E440006C462E /* Build configuration list for PBXProject "MSSE650-WorkoutIntervals" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7470D76B1A72E440006C462E;
+			productRefGroup = 7470D7751A72E440006C462E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7470D7731A72E440006C462E /* MSSE650-WorkoutIntervals */,
+				7470D78C1A72E440006C462E /* MSSE650-WorkoutIntervalsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7470D7721A72E440006C462E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7470D7851A72E440006C462E /* Images.xcassets in Resources */,
+				7470D7A11A72E4DB006C462E /* MainViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7470D78B1A72E440006C462E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7470D7701A72E440006C462E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7470D77D1A72E440006C462E /* AppDelegate.m in Sources */,
+				7470D7A01A72E4DB006C462E /* MainViewController.m in Sources */,
+				7470D77A1A72E440006C462E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7470D7891A72E440006C462E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7470D7941A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7470D78F1A72E440006C462E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7470D7731A72E440006C462E /* MSSE650-WorkoutIntervals */;
+			targetProxy = 7470D78E1A72E440006C462E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7470D7951A72E440006C462E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7470D7961A72E440006C462E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7470D7981A72E440006C462E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "MSSE650-WorkoutIntervals/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7470D7991A72E440006C462E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "MSSE650-WorkoutIntervals/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7470D79B1A72E440006C462E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MSSE650-WorkoutIntervalsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSSE650-WorkoutIntervals.app/MSSE650-WorkoutIntervals";
+			};
+			name = Debug;
+		};
+		7470D79C1A72E440006C462E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MSSE650-WorkoutIntervalsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSSE650-WorkoutIntervals.app/MSSE650-WorkoutIntervals";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7470D76F1A72E440006C462E /* Build configuration list for PBXProject "MSSE650-WorkoutIntervals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7470D7951A72E440006C462E /* Debug */,
+				7470D7961A72E440006C462E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7470D7971A72E440006C462E /* Build configuration list for PBXNativeTarget "MSSE650-WorkoutIntervals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7470D7981A72E440006C462E /* Debug */,
+				7470D7991A72E440006C462E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7470D79A1A72E440006C462E /* Build configuration list for PBXNativeTarget "MSSE650-WorkoutIntervalsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7470D79B1A72E440006C462E /* Debug */,
+				7470D79C1A72E440006C462E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7470D76C1A72E440006C462E /* Project object */;
+}
