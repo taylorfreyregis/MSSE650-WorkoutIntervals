@@ -13,6 +13,10 @@
 		7470D7941A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470D7931A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m */; };
 		7470D7A01A72E4DB006C462E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470D79E1A72E4DB006C462E /* MainViewController.m */; };
 		7470D7A11A72E4DB006C462E /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7470D79F1A72E4DB006C462E /* MainViewController.xib */; };
+		FAAA85C31A756F7D00A65F9D /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85C21A756F7D00A65F9D /* Workout.m */; };
+		FAAA85C61A756F9200A65F9D /* Interval.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85C51A756F9200A65F9D /* Interval.m */; };
+		FAAA85CB1A7578C400A65F9D /* IntervalSvcCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85CA1A7578C400A65F9D /* IntervalSvcCache.m */; };
+		FAAA85CF1A7584E300A65F9D /* WorkoutSvcCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85CE1A7584E300A65F9D /* WorkoutSvcCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,16 @@
 		7470D79D1A72E4DB006C462E /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		7470D79E1A72E4DB006C462E /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7470D79F1A72E4DB006C462E /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		FAAA85C11A756F7D00A65F9D /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
+		FAAA85C21A756F7D00A65F9D /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
+		FAAA85C41A756F9200A65F9D /* Interval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interval.h; sourceTree = "<group>"; };
+		FAAA85C51A756F9200A65F9D /* Interval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interval.m; sourceTree = "<group>"; };
+		FAAA85C81A75774200A65F9D /* IntervalSvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalSvc.h; sourceTree = "<group>"; };
+		FAAA85C91A7578C400A65F9D /* IntervalSvcCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalSvcCache.h; sourceTree = "<group>"; };
+		FAAA85CA1A7578C400A65F9D /* IntervalSvcCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalSvcCache.m; sourceTree = "<group>"; };
+		FAAA85CC1A75847A00A65F9D /* WorkoutSvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutSvc.h; sourceTree = "<group>"; };
+		FAAA85CD1A7584E300A65F9D /* WorkoutSvcCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutSvcCache.h; sourceTree = "<group>"; };
+		FAAA85CE1A7584E300A65F9D /* WorkoutSvcCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutSvcCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +93,8 @@
 		7470D7761A72E440006C462E /* MSSE650-WorkoutIntervals */ = {
 			isa = PBXGroup;
 			children = (
+				FAAA85C71A75770F00A65F9D /* Services */,
+				FAAA85BE1A756F3A00A65F9D /* Models */,
 				7470D77B1A72E440006C462E /* AppDelegate.h */,
 				7470D77C1A72E440006C462E /* AppDelegate.m */,
 				7470D7841A72E440006C462E /* Images.xcassets */,
@@ -114,6 +130,30 @@
 				7470D7921A72E440006C462E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAAA85BE1A756F3A00A65F9D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA85C11A756F7D00A65F9D /* Workout.h */,
+				FAAA85C21A756F7D00A65F9D /* Workout.m */,
+				FAAA85C41A756F9200A65F9D /* Interval.h */,
+				FAAA85C51A756F9200A65F9D /* Interval.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FAAA85C71A75770F00A65F9D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA85C81A75774200A65F9D /* IntervalSvc.h */,
+				FAAA85C91A7578C400A65F9D /* IntervalSvcCache.h */,
+				FAAA85CA1A7578C400A65F9D /* IntervalSvcCache.m */,
+				FAAA85CC1A75847A00A65F9D /* WorkoutSvc.h */,
+				FAAA85CD1A7584E300A65F9D /* WorkoutSvcCache.h */,
+				FAAA85CE1A7584E300A65F9D /* WorkoutSvcCache.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,8 +255,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAA85CB1A7578C400A65F9D /* IntervalSvcCache.m in Sources */,
+				FAAA85CF1A7584E300A65F9D /* WorkoutSvcCache.m in Sources */,
 				7470D77D1A72E440006C462E /* AppDelegate.m in Sources */,
 				7470D7A01A72E4DB006C462E /* MainViewController.m in Sources */,
+				FAAA85C61A756F9200A65F9D /* Interval.m in Sources */,
+				FAAA85C31A756F7D00A65F9D /* Workout.m in Sources */,
 				7470D77A1A72E440006C462E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
