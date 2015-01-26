@@ -12,6 +12,6 @@
 
 @property (nonatomic) int ident;
 @property (nonatomic) NSString *workoutName;
-@property (nonatomic) NSArray *intervals;
+@property (nonatomic) NSMutableArray *intervals;
 
 @end

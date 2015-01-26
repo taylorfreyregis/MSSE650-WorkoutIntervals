@@ -42,6 +42,14 @@
     //Open spinner with durations
 }
 
+- (IBAction)createIntervalAction:(id)sender {
+    //Switch to Create Interval View Controller
+}
+
+- (IBAction)addIntervalButton:(id)sender {
+    // Open spinner and add selected one to the list of Intervals stored within the Workout
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

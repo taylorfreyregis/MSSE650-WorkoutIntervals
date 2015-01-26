@@ -7,11 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
+//#import "MainViewController.h"
+#import "CreateWorkoutViewController.h"
 
 @interface AppDelegate ()
 
-@property (strong, nonatomic) MainViewController *mainViewController;
+//@property (strong, nonatomic) MainViewController *mainViewController;
+@property (strong, nonatomic) CreateWorkoutViewController *createWorkoutController;
 
 @end
 
@@ -21,8 +23,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.mainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
-    self.window.rootViewController = self.mainViewController;
+    self.createWorkoutController = [[CreateWorkoutViewController alloc] initWithNibName:@"CreateWorkoutViewController" bundle:nil];
+    self.window.rootViewController = self.createWorkoutController;
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -34,12 +34,15 @@
 }
 */
 
+# pragma mark - Interval
+
 - (IBAction)intervalSetDuration:(id)sender {
     // Open a spinner for duration, same as the one for workout duration
 }
 
 - (IBAction)saveIntervalButton:(id)sender {
     // Save to IntervalService
+    // TODO how to pass around a reference to the single service? Do you override the init or just getter/setter?
 }
 
 @end

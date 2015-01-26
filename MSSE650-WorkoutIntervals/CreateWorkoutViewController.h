@@ -16,7 +16,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *workoutNameTextView;
 @property (weak, nonatomic) IBOutlet UILabel *workoutNameLabel;
 - (IBAction)setDurationButton:(id)sender;
+- (IBAction)createIntervalAction:(id)sender;
 
+- (IBAction)addIntervalButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *intervalTableView;
 
 @end
