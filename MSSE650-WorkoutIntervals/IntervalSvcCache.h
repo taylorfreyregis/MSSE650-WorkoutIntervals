@@ -12,7 +12,7 @@
 @interface IntervalSvcCache : NSObject <IntervalSvc>
 
 - (Interval *) createInterval: (Interval *)interval;
-- (NSMutableArray *) retrieveAllInterval;
+- (NSMutableArray *) retrieveAllIntervals;
 - (Interval *) updateInterval: (Interval *)interval;
 - (Interval *) deleteInterval: (Interval *)interval;
 

@@ -17,6 +17,10 @@
 		FAAA85C61A756F9200A65F9D /* Interval.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85C51A756F9200A65F9D /* Interval.m */; };
 		FAAA85CB1A7578C400A65F9D /* IntervalSvcCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85CA1A7578C400A65F9D /* IntervalSvcCache.m */; };
 		FAAA85CF1A7584E300A65F9D /* WorkoutSvcCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85CE1A7584E300A65F9D /* WorkoutSvcCache.m */; };
+		FAAA85D31A75890100A65F9D /* CreateWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85D11A75890100A65F9D /* CreateWorkoutViewController.m */; };
+		FAAA85D41A75890100A65F9D /* CreateWorkoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAA85D21A75890100A65F9D /* CreateWorkoutViewController.xib */; };
+		FAAA85DC1A75DD8B00A65F9D /* CreateIntervalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85DA1A75DD8B00A65F9D /* CreateIntervalViewController.m */; };
+		FAAA85DD1A75DD8B00A65F9D /* CreateIntervalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAA85DB1A75DD8B00A65F9D /* CreateIntervalViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,12 @@
 		FAAA85CC1A75847A00A65F9D /* WorkoutSvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutSvc.h; sourceTree = "<group>"; };
 		FAAA85CD1A7584E300A65F9D /* WorkoutSvcCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutSvcCache.h; sourceTree = "<group>"; };
 		FAAA85CE1A7584E300A65F9D /* WorkoutSvcCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutSvcCache.m; sourceTree = "<group>"; };
+		FAAA85D01A75890100A65F9D /* CreateWorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateWorkoutViewController.h; sourceTree = "<group>"; };
+		FAAA85D11A75890100A65F9D /* CreateWorkoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateWorkoutViewController.m; sourceTree = "<group>"; };
+		FAAA85D21A75890100A65F9D /* CreateWorkoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateWorkoutViewController.xib; sourceTree = "<group>"; };
+		FAAA85D91A75DD8B00A65F9D /* CreateIntervalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateIntervalViewController.h; sourceTree = "<group>"; };
+		FAAA85DA1A75DD8B00A65F9D /* CreateIntervalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateIntervalViewController.m; sourceTree = "<group>"; };
+		FAAA85DB1A75DD8B00A65F9D /* CreateIntervalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateIntervalViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +112,12 @@
 				7470D79D1A72E4DB006C462E /* MainViewController.h */,
 				7470D79E1A72E4DB006C462E /* MainViewController.m */,
 				7470D79F1A72E4DB006C462E /* MainViewController.xib */,
+				FAAA85D01A75890100A65F9D /* CreateWorkoutViewController.h */,
+				FAAA85D11A75890100A65F9D /* CreateWorkoutViewController.m */,
+				FAAA85D21A75890100A65F9D /* CreateWorkoutViewController.xib */,
+				FAAA85D91A75DD8B00A65F9D /* CreateIntervalViewController.h */,
+				FAAA85DA1A75DD8B00A65F9D /* CreateIntervalViewController.m */,
+				FAAA85DB1A75DD8B00A65F9D /* CreateIntervalViewController.xib */,
 			);
 			path = "MSSE650-WorkoutIntervals";
 			sourceTree = "<group>";
@@ -238,6 +254,8 @@
 			files = (
 				7470D7851A72E440006C462E /* Images.xcassets in Resources */,
 				7470D7A11A72E4DB006C462E /* MainViewController.xib in Resources */,
+				FAAA85DD1A75DD8B00A65F9D /* CreateIntervalViewController.xib in Resources */,
+				FAAA85D41A75890100A65F9D /* CreateWorkoutViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,12 +273,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAA85DC1A75DD8B00A65F9D /* CreateIntervalViewController.m in Sources */,
 				FAAA85CB1A7578C400A65F9D /* IntervalSvcCache.m in Sources */,
 				FAAA85CF1A7584E300A65F9D /* WorkoutSvcCache.m in Sources */,
 				7470D77D1A72E440006C462E /* AppDelegate.m in Sources */,
 				7470D7A01A72E4DB006C462E /* MainViewController.m in Sources */,
 				FAAA85C61A756F9200A65F9D /* Interval.m in Sources */,
 				FAAA85C31A756F7D00A65F9D /* Workout.m in Sources */,
+				FAAA85D31A75890100A65F9D /* CreateWorkoutViewController.m in Sources */,
 				7470D77A1A72E440006C462E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,7 +26,7 @@ NSMutableArray *intervals;
     return interval;
 }
 
-- (NSMutableArray *) retrieveAllInterval {
+- (NSMutableArray *) retrieveAllIntervals {
     
     return intervals;
 }
