@@ -14,4 +14,6 @@
 @property (nonatomic) NSString *intervalName;
 @property (nonatomic) int duration;
 
+-(instancetype) initWithName:(NSString *)name andDuration:(int)seconds;
+    
 @end

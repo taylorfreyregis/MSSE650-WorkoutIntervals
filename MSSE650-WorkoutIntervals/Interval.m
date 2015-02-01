@@ -10,4 +10,12 @@
 
 @implementation Interval
 
+-(instancetype) initWithName:(NSString *)name andDuration:(int)seconds {
+    self = [super init];
+    if (self){
+        self.intervalName = name;
+        self.duration = seconds;
+    }
+    return self;
+}
 @end

@@ -26,7 +26,7 @@ NSMutableArray *workouts;
     return workout;
 }
 
-- (NSMutableArray *) retrieveAllWorkout{
+- (NSMutableArray *) retrieveAllWorkouts {
     return workouts;
 }
 

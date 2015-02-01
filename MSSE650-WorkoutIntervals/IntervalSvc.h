@@ -12,7 +12,7 @@
 @protocol IntervalSvc <NSObject>
 
 - (Interval *) createInterval: (Interval *)interval;
-- (NSMutableArray *) retrieveAllInterval;
+- (NSMutableArray *) retrieveAllIntervals;
 - (Interval *) updateInterval: (Interval *)interval;
 - (Interval *) deleteInterval: (Interval *)interval;
 

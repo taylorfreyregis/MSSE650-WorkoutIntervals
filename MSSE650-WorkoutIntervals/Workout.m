@@ -10,4 +10,17 @@
 
 @implementation Workout
 
+-(instancetype) initWithName:(NSString *)name andIntervals:(NSArray *)intervals {
+    self = [super init];
+    if (self){
+        self.workoutName = name;
+        self.intervals = [[NSMutableArray alloc ] initWithArray: intervals];
+    }
+    return self;
+}
+
+- (void) addInterval:(Interval *)interval {
+    [self.intervals addObject:interval];
+}
+
 @end

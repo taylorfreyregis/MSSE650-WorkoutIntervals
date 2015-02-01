@@ -12,7 +12,7 @@
 @interface WorkoutSvcCache : NSObject <WorkoutSvc>
 
 - (Workout *) createWorkout: (Workout *)workout;
-- (NSMutableArray *) retrieveAllWorkout;
+- (NSMutableArray *) retrieveAllWorkouts;
 - (Workout *) updateWorkout: (Workout *)workout;
 - (Workout *) deleteWorkout: (Workout *)workout;
 

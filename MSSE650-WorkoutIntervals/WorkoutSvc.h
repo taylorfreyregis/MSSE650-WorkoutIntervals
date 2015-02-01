@@ -12,7 +12,7 @@
 @protocol WorkoutSvc <NSObject>
 
 - (Workout *) createWorkout: (Workout *)workout;
-- (NSMutableArray *) retrieveAllWorkout;
+- (NSMutableArray *) retrieveAllWorkouts;
 - (Workout *) updateWorkout: (Workout *)workout;
 - (Workout *) deleteWorkout: (Workout *)workout;
 

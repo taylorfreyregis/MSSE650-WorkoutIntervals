@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Interval.h"
 
 @interface Workout : NSObject
 
 @property (nonatomic) int ident;
 @property (nonatomic) NSString *workoutName;
 @property (nonatomic) NSMutableArray *intervals;
+
+- (instancetype)initWithName:(NSString *)name andIntervals:(NSArray *) intervals;
+
+- (void) addInterval:(Interval *) interval;
 
 @end
