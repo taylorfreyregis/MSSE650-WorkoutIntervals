@@ -12,7 +12,7 @@
 		7470D7851A72E440006C462E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7470D7841A72E440006C462E /* Images.xcassets */; };
 		7470D7941A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470D7931A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m */; };
 		7470D7A01A72E4DB006C462E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470D79E1A72E4DB006C462E /* MainViewController.m */; };
-		7470D7A11A72E4DB006C462E /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7470D79F1A72E4DB006C462E /* MainViewController.xib */; };
+		FA82F0851A7ECB39009BD6FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA82F0841A7ECB39009BD6FE /* Main.storyboard */; };
 		FAAA85C31A756F7D00A65F9D /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85C21A756F7D00A65F9D /* Workout.m */; };
 		FAAA85C61A756F9200A65F9D /* Interval.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85C51A756F9200A65F9D /* Interval.m */; };
 		FAAA85CB1A7578C400A65F9D /* IntervalSvcCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85CA1A7578C400A65F9D /* IntervalSvcCache.m */; };
@@ -45,7 +45,7 @@
 		7470D7931A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSE650_WorkoutIntervalsTests.m; sourceTree = "<group>"; };
 		7470D79D1A72E4DB006C462E /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		7470D79E1A72E4DB006C462E /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		7470D79F1A72E4DB006C462E /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		FA82F0841A7ECB39009BD6FE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FAAA85C11A756F7D00A65F9D /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
 		FAAA85C21A756F7D00A65F9D /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
 		FAAA85C41A756F9200A65F9D /* Interval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interval.h; sourceTree = "<group>"; };
@@ -111,13 +111,13 @@
 				7470D7771A72E440006C462E /* Supporting Files */,
 				7470D79D1A72E4DB006C462E /* MainViewController.h */,
 				7470D79E1A72E4DB006C462E /* MainViewController.m */,
-				7470D79F1A72E4DB006C462E /* MainViewController.xib */,
 				FAAA85D01A75890100A65F9D /* CreateWorkoutViewController.h */,
 				FAAA85D11A75890100A65F9D /* CreateWorkoutViewController.m */,
 				FAAA85D21A75890100A65F9D /* CreateWorkoutViewController.xib */,
 				FAAA85D91A75DD8B00A65F9D /* CreateIntervalViewController.h */,
 				FAAA85DA1A75DD8B00A65F9D /* CreateIntervalViewController.m */,
 				FAAA85DB1A75DD8B00A65F9D /* CreateIntervalViewController.xib */,
+				FA82F0841A7ECB39009BD6FE /* Main.storyboard */,
 			);
 			path = "MSSE650-WorkoutIntervals";
 			sourceTree = "<group>";
@@ -253,7 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7470D7851A72E440006C462E /* Images.xcassets in Resources */,
-				7470D7A11A72E4DB006C462E /* MainViewController.xib in Resources */,
+				FA82F0851A7ECB39009BD6FE /* Main.storyboard in Resources */,
 				FAAA85DD1A75DD8B00A65F9D /* CreateIntervalViewController.xib in Resources */,
 				FAAA85D41A75890100A65F9D /* CreateWorkoutViewController.xib in Resources */,
 			);
