@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "Interval.h"
 #import "Workout.h"
+#import "WorkoutsTableViewController.h"
 
 @interface MainViewController ()
 
@@ -29,15 +30,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+# pragma mark - Static models
 
 // Since we don't have web services or anything stored yet, just create static resources for the workouts
 - (NSArray *) createIntervals {
@@ -65,5 +58,24 @@
     
     return [[NSArray alloc]initWithObjects:first, second, third, fourth, fifth, nil];
 }
+
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    // Verify the segue via the identifier
+    if ([[segue identifier] isEqualToString:@"initialWorkouts"]) {
+        // Pass along the information necessary
+        // However, the next ViewController is a Navigation Controller, not the Table View Controller we want.
+        // So we'll have to get it.
+        UINavigationController *navigationController = segue.destinationViewController;
+        WorkoutsTableViewController *workoutsTableViewController = [[navigationController viewControllers] objectAtIndex:0];
+        workoutsTableViewController.workouts = [[NSMutableArray alloc]initWithArray:[self createWorkouts]];
+        
+    }
+    
+}
+
 
 @end

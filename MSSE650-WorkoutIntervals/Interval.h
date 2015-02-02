@@ -11,7 +11,7 @@
 @interface Interval : NSObject
 
 @property (nonatomic) int ident;
-@property (nonatomic) NSString *intervalName;
+@property (nonatomic) NSString *name;
 @property (nonatomic) int duration;
 
 -(instancetype) initWithName:(NSString *)name andDuration:(int)seconds;

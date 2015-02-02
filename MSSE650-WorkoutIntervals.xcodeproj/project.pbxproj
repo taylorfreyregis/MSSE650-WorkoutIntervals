@@ -13,6 +13,7 @@
 		7470D7941A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470D7931A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m */; };
 		7470D7A01A72E4DB006C462E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470D79E1A72E4DB006C462E /* MainViewController.m */; };
 		FA82F0851A7ECB39009BD6FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA82F0841A7ECB39009BD6FE /* Main.storyboard */; };
+		FA82F0891A7EE82A009BD6FE /* WorkoutsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82F0881A7EE82A009BD6FE /* WorkoutsTableViewController.m */; };
 		FAAA85C31A756F7D00A65F9D /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85C21A756F7D00A65F9D /* Workout.m */; };
 		FAAA85C61A756F9200A65F9D /* Interval.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85C51A756F9200A65F9D /* Interval.m */; };
 		FAAA85CB1A7578C400A65F9D /* IntervalSvcCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85CA1A7578C400A65F9D /* IntervalSvcCache.m */; };
@@ -43,9 +44,11 @@
 		7470D78D1A72E440006C462E /* MSSE650-WorkoutIntervalsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MSSE650-WorkoutIntervalsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7470D7921A72E440006C462E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7470D7931A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSE650_WorkoutIntervalsTests.m; sourceTree = "<group>"; };
-		7470D79D1A72E4DB006C462E /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		7470D79E1A72E4DB006C462E /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		7470D79D1A72E4DB006C462E /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = "MSSE650-WorkoutIntervals/MainViewController.h"; sourceTree = "<group>"; };
+		7470D79E1A72E4DB006C462E /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = "MSSE650-WorkoutIntervals/MainViewController.m"; sourceTree = "<group>"; };
 		FA82F0841A7ECB39009BD6FE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FA82F0871A7EE82A009BD6FE /* WorkoutsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutsTableViewController.h; sourceTree = "<group>"; };
+		FA82F0881A7EE82A009BD6FE /* WorkoutsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutsTableViewController.m; sourceTree = "<group>"; };
 		FAAA85C11A756F7D00A65F9D /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
 		FAAA85C21A756F7D00A65F9D /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
 		FAAA85C41A756F9200A65F9D /* Interval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interval.h; sourceTree = "<group>"; };
@@ -109,8 +112,7 @@
 				7470D77C1A72E440006C462E /* AppDelegate.m */,
 				7470D7841A72E440006C462E /* Images.xcassets */,
 				7470D7771A72E440006C462E /* Supporting Files */,
-				7470D79D1A72E4DB006C462E /* MainViewController.h */,
-				7470D79E1A72E4DB006C462E /* MainViewController.m */,
+				FA82F0861A7EE7EE009BD6FE /* ViewControllers */,
 				FAAA85D01A75890100A65F9D /* CreateWorkoutViewController.h */,
 				FAAA85D11A75890100A65F9D /* CreateWorkoutViewController.m */,
 				FAAA85D21A75890100A65F9D /* CreateWorkoutViewController.xib */,
@@ -146,6 +148,18 @@
 				7470D7921A72E440006C462E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA82F0861A7EE7EE009BD6FE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7470D79D1A72E4DB006C462E /* MainViewController.h */,
+				7470D79E1A72E4DB006C462E /* MainViewController.m */,
+				FA82F0871A7EE82A009BD6FE /* WorkoutsTableViewController.h */,
+				FA82F0881A7EE82A009BD6FE /* WorkoutsTableViewController.m */,
+			);
+			name = ViewControllers;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		FAAA85BE1A756F3A00A65F9D /* Models */ = {
@@ -280,6 +294,7 @@
 				7470D7A01A72E4DB006C462E /* MainViewController.m in Sources */,
 				FAAA85C61A756F9200A65F9D /* Interval.m in Sources */,
 				FAAA85C31A756F7D00A65F9D /* Workout.m in Sources */,
+				FA82F0891A7EE82A009BD6FE /* WorkoutsTableViewController.m in Sources */,
 				FAAA85D31A75890100A65F9D /* CreateWorkoutViewController.m in Sources */,
 				7470D77A1A72E440006C462E /* main.m in Sources */,
 			);

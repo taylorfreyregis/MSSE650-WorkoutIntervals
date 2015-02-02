@@ -13,7 +13,7 @@
 -(instancetype) initWithName:(NSString *)name andIntervals:(NSArray *)intervals {
     self = [super init];
     if (self){
-        self.workoutName = name;
+        self.name = name;
         self.intervals = [[NSMutableArray alloc ] initWithArray: intervals];
     }
     return self;

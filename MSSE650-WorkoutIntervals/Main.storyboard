@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4B3-gF-2kD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5lg-bg-NzL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vv2-Av-1pz">
@@ -44,7 +44,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="bb1-xy-eQM" kind="show" id="CPe-aR-Abx"/>
+                                    <segue destination="bb1-xy-eQM" kind="show" identifier="initialWorkouts" id="CPe-aR-Abx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFF-3Z-feY">
@@ -84,11 +84,11 @@
                                 <exclude reference="iFF-3Z-feY"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="yTe-iC-Kb3"/>
                                 <exclude reference="8jW-fH-M36"/>
                                 <exclude reference="aRO-qc-7TP"/>
                                 <exclude reference="jB6-0a-OwE"/>
                                 <exclude reference="qWX-wc-AeW"/>
-                                <exclude reference="yTe-iC-Kb3"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -97,11 +97,11 @@
                                 <include reference="iFF-3Z-feY"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="yTe-iC-Kb3"/>
                                 <include reference="8jW-fH-M36"/>
                                 <include reference="aRO-qc-7TP"/>
                                 <include reference="jB6-0a-OwE"/>
                                 <include reference="qWX-wc-AeW"/>
-                                <include reference="yTe-iC-Kb3"/>
                             </mask>
                         </variation>
                     </view>
@@ -110,18 +110,30 @@
             </objects>
             <point key="canvasLocation" x="147" y="416"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Workouts-->
         <scene sceneID="r2A-PZ-UsA">
             <objects>
-                <tableViewController id="auJ-7e-cme" sceneMemberID="viewController">
+                <tableViewController id="auJ-7e-cme" customClass="WorkoutsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jWA-Qp-box">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aZf-CO-ohA">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutIdentifier" textLabel="g2e-wC-tR0" style="IBUITableViewCellStyleDefault" id="aZf-CO-ohA">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aZf-CO-ohA" id="fUx-ce-KXE">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g2e-wC-tR0">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact">
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            </variation>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -130,7 +142,7 @@
                             <outlet property="delegate" destination="auJ-7e-cme" id="UQZ-5s-fOR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="LWE-u5-v68"/>
+                    <navigationItem key="navigationItem" title="Workouts" id="LWE-u5-v68"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1o-sf-9mN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
