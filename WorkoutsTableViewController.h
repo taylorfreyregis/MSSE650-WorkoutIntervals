@@ -12,4 +12,6 @@
 
 @property (nonatomic) NSMutableArray *workouts;
 
+- (IBAction)doneButton:(id)sender;
+
 @end

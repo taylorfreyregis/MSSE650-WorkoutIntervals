@@ -42,12 +42,15 @@
     //Open spinner with durations
 }
 
-- (IBAction)createIntervalAction:(id)sender {
-    //Switch to Create Interval View Controller
+- (IBAction)cancelWorkoutButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:true];
 }
 
 - (IBAction)addIntervalButton:(id)sender {
     // Open spinner and add selected one to the list of Intervals stored within the Workout
+}
+
+- (IBAction)saveWorkoutButton:(id)sender {
 }
 
 #pragma mark - UITableViewDataSource

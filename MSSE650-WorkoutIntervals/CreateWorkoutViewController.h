@@ -14,11 +14,11 @@
 @property (weak, nonatomic) IntervalSvcCache *intervalSvcCache;
 @property (weak, nonatomic) IBOutlet UILabel *workoutDurationLabel;
 @property (weak, nonatomic) IBOutlet UITextField *workoutNameTextView;
-@property (weak, nonatomic) IBOutlet UILabel *workoutNameLabel;
 - (IBAction)setDurationButton:(id)sender;
-- (IBAction)createIntervalAction:(id)sender;
+- (IBAction)cancelWorkoutButton:(id)sender;
 
 - (IBAction)addIntervalButton:(id)sender;
+- (IBAction)saveWorkoutButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *intervalTableView;
 
 @end

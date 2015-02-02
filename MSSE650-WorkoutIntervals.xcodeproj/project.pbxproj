@@ -19,9 +19,8 @@
 		FAAA85CB1A7578C400A65F9D /* IntervalSvcCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85CA1A7578C400A65F9D /* IntervalSvcCache.m */; };
 		FAAA85CF1A7584E300A65F9D /* WorkoutSvcCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85CE1A7584E300A65F9D /* WorkoutSvcCache.m */; };
 		FAAA85D31A75890100A65F9D /* CreateWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85D11A75890100A65F9D /* CreateWorkoutViewController.m */; };
-		FAAA85D41A75890100A65F9D /* CreateWorkoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAA85D21A75890100A65F9D /* CreateWorkoutViewController.xib */; };
 		FAAA85DC1A75DD8B00A65F9D /* CreateIntervalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85DA1A75DD8B00A65F9D /* CreateIntervalViewController.m */; };
-		FAAA85DD1A75DD8B00A65F9D /* CreateIntervalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAA85DB1A75DD8B00A65F9D /* CreateIntervalViewController.xib */; };
+		FAC057B61A7F121900C43F2E /* PerformWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC057B51A7F121900C43F2E /* PerformWorkoutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,12 +58,12 @@
 		FAAA85CC1A75847A00A65F9D /* WorkoutSvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutSvc.h; sourceTree = "<group>"; };
 		FAAA85CD1A7584E300A65F9D /* WorkoutSvcCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutSvcCache.h; sourceTree = "<group>"; };
 		FAAA85CE1A7584E300A65F9D /* WorkoutSvcCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutSvcCache.m; sourceTree = "<group>"; };
-		FAAA85D01A75890100A65F9D /* CreateWorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateWorkoutViewController.h; sourceTree = "<group>"; };
-		FAAA85D11A75890100A65F9D /* CreateWorkoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateWorkoutViewController.m; sourceTree = "<group>"; };
-		FAAA85D21A75890100A65F9D /* CreateWorkoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateWorkoutViewController.xib; sourceTree = "<group>"; };
-		FAAA85D91A75DD8B00A65F9D /* CreateIntervalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateIntervalViewController.h; sourceTree = "<group>"; };
-		FAAA85DA1A75DD8B00A65F9D /* CreateIntervalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateIntervalViewController.m; sourceTree = "<group>"; };
-		FAAA85DB1A75DD8B00A65F9D /* CreateIntervalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateIntervalViewController.xib; sourceTree = "<group>"; };
+		FAAA85D01A75890100A65F9D /* CreateWorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateWorkoutViewController.h; path = "MSSE650-WorkoutIntervals/CreateWorkoutViewController.h"; sourceTree = "<group>"; };
+		FAAA85D11A75890100A65F9D /* CreateWorkoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateWorkoutViewController.m; path = "MSSE650-WorkoutIntervals/CreateWorkoutViewController.m"; sourceTree = "<group>"; };
+		FAAA85D91A75DD8B00A65F9D /* CreateIntervalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateIntervalViewController.h; path = "MSSE650-WorkoutIntervals/CreateIntervalViewController.h"; sourceTree = "<group>"; };
+		FAAA85DA1A75DD8B00A65F9D /* CreateIntervalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateIntervalViewController.m; path = "MSSE650-WorkoutIntervals/CreateIntervalViewController.m"; sourceTree = "<group>"; };
+		FAC057B41A7F121900C43F2E /* PerformWorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerformWorkoutViewController.h; sourceTree = "<group>"; };
+		FAC057B51A7F121900C43F2E /* PerformWorkoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerformWorkoutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,12 +112,6 @@
 				7470D7841A72E440006C462E /* Images.xcassets */,
 				7470D7771A72E440006C462E /* Supporting Files */,
 				FA82F0861A7EE7EE009BD6FE /* ViewControllers */,
-				FAAA85D01A75890100A65F9D /* CreateWorkoutViewController.h */,
-				FAAA85D11A75890100A65F9D /* CreateWorkoutViewController.m */,
-				FAAA85D21A75890100A65F9D /* CreateWorkoutViewController.xib */,
-				FAAA85D91A75DD8B00A65F9D /* CreateIntervalViewController.h */,
-				FAAA85DA1A75DD8B00A65F9D /* CreateIntervalViewController.m */,
-				FAAA85DB1A75DD8B00A65F9D /* CreateIntervalViewController.xib */,
 				FA82F0841A7ECB39009BD6FE /* Main.storyboard */,
 			);
 			path = "MSSE650-WorkoutIntervals";
@@ -153,10 +146,16 @@
 		FA82F0861A7EE7EE009BD6FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAAA85D01A75890100A65F9D /* CreateWorkoutViewController.h */,
+				FAAA85D11A75890100A65F9D /* CreateWorkoutViewController.m */,
+				FAAA85D91A75DD8B00A65F9D /* CreateIntervalViewController.h */,
+				FAAA85DA1A75DD8B00A65F9D /* CreateIntervalViewController.m */,
 				7470D79D1A72E4DB006C462E /* MainViewController.h */,
 				7470D79E1A72E4DB006C462E /* MainViewController.m */,
 				FA82F0871A7EE82A009BD6FE /* WorkoutsTableViewController.h */,
 				FA82F0881A7EE82A009BD6FE /* WorkoutsTableViewController.m */,
+				FAC057B41A7F121900C43F2E /* PerformWorkoutViewController.h */,
+				FAC057B51A7F121900C43F2E /* PerformWorkoutViewController.m */,
 			);
 			name = ViewControllers;
 			path = ..;
@@ -268,8 +267,6 @@
 			files = (
 				7470D7851A72E440006C462E /* Images.xcassets in Resources */,
 				FA82F0851A7ECB39009BD6FE /* Main.storyboard in Resources */,
-				FAAA85DD1A75DD8B00A65F9D /* CreateIntervalViewController.xib in Resources */,
-				FAAA85D41A75890100A65F9D /* CreateWorkoutViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +286,7 @@
 			files = (
 				FAAA85DC1A75DD8B00A65F9D /* CreateIntervalViewController.m in Sources */,
 				FAAA85CB1A7578C400A65F9D /* IntervalSvcCache.m in Sources */,
+				FAC057B61A7F121900C43F2E /* PerformWorkoutViewController.m in Sources */,
 				FAAA85CF1A7584E300A65F9D /* WorkoutSvcCache.m in Sources */,
 				7470D77D1A72E440006C462E /* AppDelegate.m in Sources */,
 				7470D7A01A72E4DB006C462E /* MainViewController.m in Sources */,

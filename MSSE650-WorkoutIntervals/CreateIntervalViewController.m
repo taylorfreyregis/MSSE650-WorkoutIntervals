@@ -45,4 +45,9 @@
     // TODO how to pass around a reference to the single service? Do you override the init or just getter/setter?
 }
 
+- (IBAction)cancelIntervalButton:(id)sender {
+    // Cancel. Just pop the navigation stack
+    [self.navigationController popViewControllerAnimated:true];
+}
+
 @end

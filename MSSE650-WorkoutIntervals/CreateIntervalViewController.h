@@ -11,10 +11,14 @@
 @interface CreateIntervalViewController : UIViewController
 
 
-@property (weak, nonatomic) IBOutlet UILabel *intervalNameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *intervalNameTextField;
-- (IBAction)intervalSetDuration:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UILabel *intervalDurationLabel;
+
+- (IBAction)intervalSetDuration:(id)sender;
+
+- (IBAction)cancelIntervalButton:(id)sender;
+
 - (IBAction)saveIntervalButton:(id)sender;
 
 @end
