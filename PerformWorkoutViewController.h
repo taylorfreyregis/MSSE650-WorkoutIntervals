@@ -11,6 +11,8 @@
 
 @interface PerformWorkoutViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UINavigationItem *workoutTitle;
+
 @property (nonatomic) Workout *workout;
 
 @end

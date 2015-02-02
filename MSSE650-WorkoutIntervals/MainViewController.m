@@ -69,13 +69,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     // Verify the segue via the identifier
-    if ([[segue identifier] isEqualToString:@"initialWorkouts"]) {
-        // Pass along the information necessary
-        // However, the next ViewController is a Navigation Controller, not the Table View Controller we want.
-        // So we'll have to get it.
-        UINavigationController *navigationController = segue.destinationViewController;
-        WorkoutsTableViewController *workoutsTableViewController = [[navigationController viewControllers] objectAtIndex:0];
-        workoutsTableViewController.workouts = [[NSMutableArray alloc]initWithArray:[self createWorkouts]];
+    if ([[segue identifier] isEqualToString:@"MainToWorkouts"]) {
+        
+        WorkoutsTableViewController *destination = segue.destinationViewController;
+        destination.workouts = [[NSMutableArray alloc] initWithArray:[self createWorkouts]];
         
     }
     
