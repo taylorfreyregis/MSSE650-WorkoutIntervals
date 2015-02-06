@@ -15,6 +15,10 @@ NSMutableArray *intervals;
 - (id) init {
     if (self = [super init]) {
         intervals = [NSMutableArray array];
+        
+        // This is only for this static cache, but not something to keep in a future release
+        [self createStaticIntervals];
+        
         return self;
     }
     return nil;
@@ -41,6 +45,21 @@ NSMutableArray *intervals;
     
     [intervals removeObject:interval];
     return interval;
+}
+
+- (void) createStaticIntervals {
+    // Since we don't have web services or anything stored yet, just create static resources for the workouts
+    Interval *intervalOne = [[Interval alloc] initWithName:@"60 Seconds" andDuration:60];
+    [self createInterval:intervalOne];
+    
+    Interval *intervalTwo = [[Interval alloc] initWithName:@"90 Seconds" andDuration:90];
+    [self createInterval:intervalTwo];
+    
+    Interval *intervalThree = [[Interval alloc] initWithName:@"3 minutes" andDuration:180];
+    [self createInterval:intervalThree];
+    
+    Interval *intervalFour = [[Interval alloc] initWithName:@"5 minutes" andDuration:300];
+    [self createInterval:intervalFour];
 }
 
 @end
