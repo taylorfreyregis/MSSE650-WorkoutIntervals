@@ -11,6 +11,9 @@
 #import "Workout.h"
 #import "WorkoutsTableViewController.h"
 
+// TODO, update to singleton
+#import "WorkoutSvcCache.h"
+
 @interface MainViewController ()
 
 @property (nonatomic) NSMutableArray *intervals;
@@ -42,7 +45,10 @@
     if ([[segue identifier] isEqualToString:@"MainToWorkouts"]) {
         
         WorkoutsTableViewController *destination = segue.destinationViewController;
-        destination.workouts = [[NSMutableArray alloc] initWithArray:[self createWorkouts]];
+        
+        WorkoutSvcCache *workoutSvc = [[WorkoutSvcCache alloc] init];
+        
+        destination.workouts = [[NSMutableArray alloc] initWithArray:[workoutSvc retrieveAllWorkouts]];
         
     }
     

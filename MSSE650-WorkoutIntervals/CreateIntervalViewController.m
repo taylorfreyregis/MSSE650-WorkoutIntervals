@@ -7,6 +7,7 @@
 //
 
 #import "CreateIntervalViewController.h"
+#import "IntervalSvcCache.h"
 
 @interface CreateIntervalViewController ()
 
@@ -34,6 +35,28 @@
 }
 */
 
+# pragma mark - UIPickerViewDataSource
+
+// returns the number of 'columns' to display.
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+// returns the # of rows in each component..
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return [[IntervalSvcCache intervalIncrements] count];
+}
+
+# pragma mark - UIPickerViewDelegate
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [[IntervalSvcCache intervalIncrements] objectEnumerator]
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+}
+
 # pragma mark - Interval
 
 - (IBAction)intervalSetDuration:(id)sender {
@@ -48,6 +71,17 @@
 - (IBAction)cancelIntervalButton:(id)sender {
     // Cancel. Just pop the navigation stack
     [self.navigationController popViewControllerAnimated:true];
+}
+
+- (bool) validate {
+    
+    NSString *name = [self.intervalNameTextField text];
+    
+    if (name == nil || name.length == 0) {
+        return false;
+    }
+    
+    return true;
 }
 
 @end

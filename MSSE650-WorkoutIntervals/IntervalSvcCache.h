@@ -11,6 +11,9 @@
 
 @interface IntervalSvcCache : NSObject <IntervalSvc>
 
++ (id) intervalSvcCacheSingleton;
++ (NSDictionary *) intervalIncrements;
+
 - (Interval *) createInterval: (Interval *)interval;
 - (NSMutableArray *) retrieveAllIntervals;
 - (Interval *) updateInterval: (Interval *)interval;

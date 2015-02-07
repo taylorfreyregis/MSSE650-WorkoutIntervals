@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Interval.h"
 
+
+
 @protocol IntervalSvc <NSObject>
 
 - (Interval *) createInterval: (Interval *)interval;

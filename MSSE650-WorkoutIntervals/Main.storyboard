@@ -374,6 +374,12 @@
                                     <rect key="frame" x="175" y="147" width="129" height="21"/>
                                 </variation>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUI-Mq-3SD">
+                                <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="198" width="400" height="162"/>
+                                </variation>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -382,6 +388,7 @@
                                 <exclude reference="SXc-vW-hkw"/>
                                 <exclude reference="VV8-Ka-798"/>
                                 <exclude reference="zFy-Gu-M1h"/>
+                                <exclude reference="DUI-Mq-3SD"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -390,6 +397,11 @@
                                 <include reference="SXc-vW-hkw"/>
                                 <include reference="VV8-Ka-798"/>
                                 <include reference="zFy-Gu-M1h"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="DUI-Mq-3SD"/>
                             </mask>
                         </variation>
                     </view>
@@ -408,6 +420,7 @@
                     <connections>
                         <outlet property="intervalDurationLabel" destination="zFy-Gu-M1h" id="7zR-eY-jy5"/>
                         <outlet property="intervalNameTextField" destination="SXc-vW-hkw" id="rsY-zH-wzG"/>
+                        <outlet property="intervalPicker" destination="DUI-Mq-3SD" id="OVv-kO-D8e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9g-RA-3CL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -423,7 +436,7 @@
                         <viewControllerLayoutGuide type="bottom" id="hpJ-eg-IgY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZAt-Iy-ta1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vU9-YA-ZQt">
@@ -545,12 +558,21 @@
                                 <exclude reference="V0G-sZ-gcj"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="HSg-eH-Amp"/>
+                                <exclude reference="LJu-HX-0ve"/>
+                                <exclude reference="OeS-6f-h3X"/>
+                                <exclude reference="4wI-Lg-l0V"/>
+                                <exclude reference="cch-08-eeU"/>
+                                <exclude reference="PPY-D4-r9Q"/>
                                 <exclude reference="0EO-qb-U5l"/>
                                 <exclude reference="TVF-LL-sBf"/>
                                 <exclude reference="TaE-K2-A6w"/>
-                                <exclude reference="HSg-eH-Amp"/>
                                 <exclude reference="dKA-D1-GjQ"/>
                                 <exclude reference="gAY-Rf-pKA"/>
+                                <exclude reference="Tf0-io-ZMT"/>
+                                <exclude reference="p8w-Rs-Huy"/>
+                                <exclude reference="4nY-j2-hhS"/>
+                                <exclude reference="GIh-RR-JEq"/>
                                 <exclude reference="2UZ-cd-mWH"/>
                                 <exclude reference="9BY-Lf-d0P"/>
                                 <exclude reference="NNt-Aa-2yb"/>
@@ -558,15 +580,6 @@
                                 <exclude reference="TkT-9P-50u"/>
                                 <exclude reference="Uxq-kY-6fF"/>
                                 <exclude reference="pHU-Hx-n4t"/>
-                                <exclude reference="Tf0-io-ZMT"/>
-                                <exclude reference="p8w-Rs-Huy"/>
-                                <exclude reference="4wI-Lg-l0V"/>
-                                <exclude reference="cch-08-eeU"/>
-                                <exclude reference="LJu-HX-0ve"/>
-                                <exclude reference="OeS-6f-h3X"/>
-                                <exclude reference="4nY-j2-hhS"/>
-                                <exclude reference="GIh-RR-JEq"/>
-                                <exclude reference="PPY-D4-r9Q"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -581,12 +594,21 @@
                                 <include reference="V0G-sZ-gcj"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="HSg-eH-Amp"/>
+                                <include reference="LJu-HX-0ve"/>
+                                <include reference="OeS-6f-h3X"/>
+                                <include reference="4wI-Lg-l0V"/>
+                                <include reference="cch-08-eeU"/>
+                                <include reference="PPY-D4-r9Q"/>
                                 <include reference="0EO-qb-U5l"/>
                                 <include reference="TVF-LL-sBf"/>
                                 <include reference="TaE-K2-A6w"/>
-                                <include reference="HSg-eH-Amp"/>
                                 <include reference="dKA-D1-GjQ"/>
                                 <include reference="gAY-Rf-pKA"/>
+                                <include reference="Tf0-io-ZMT"/>
+                                <include reference="p8w-Rs-Huy"/>
+                                <include reference="4nY-j2-hhS"/>
+                                <include reference="GIh-RR-JEq"/>
                                 <include reference="2UZ-cd-mWH"/>
                                 <include reference="9BY-Lf-d0P"/>
                                 <include reference="NNt-Aa-2yb"/>
@@ -594,15 +616,6 @@
                                 <include reference="TkT-9P-50u"/>
                                 <include reference="Uxq-kY-6fF"/>
                                 <include reference="pHU-Hx-n4t"/>
-                                <include reference="Tf0-io-ZMT"/>
-                                <include reference="p8w-Rs-Huy"/>
-                                <include reference="4wI-Lg-l0V"/>
-                                <include reference="cch-08-eeU"/>
-                                <include reference="LJu-HX-0ve"/>
-                                <include reference="OeS-6f-h3X"/>
-                                <include reference="4nY-j2-hhS"/>
-                                <include reference="GIh-RR-JEq"/>
-                                <include reference="PPY-D4-r9Q"/>
                             </mask>
                         </variation>
                     </view>

@@ -12,6 +12,19 @@
 
 NSMutableArray *intervals;
 
+#pragma mark Singleton Methods
+
++ (id) intervalSvcCacheSingleton {
+    static IntervalSvcCache *intervalSingleton = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        intervalSingleton = [[self alloc] init];
+    });
+    return intervalSingleton;
+}
+
+#pragma mark IntervalSvc Implementation
+
 - (id) init {
     if (self = [super init]) {
         intervals = [NSMutableArray array];
@@ -22,6 +35,18 @@ NSMutableArray *intervals;
         return self;
     }
     return nil;
+}
+
++(NSArray*) intervalIncrements
+{
+    static NSArray* increments = nil;
+    
+    if (increments == nil)
+    {
+        [NSArrayWithObjects:30, 60, 90, 120, 180, 300, 480, 600, 900, 1200, 1800, nil];
+    }
+    
+    return increments;
 }
 
 - (Interval *) createInterval: (Interval *)interval {

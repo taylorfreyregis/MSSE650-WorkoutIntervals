@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreateIntervalViewController : UIViewController
+@interface CreateIntervalViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITextField *intervalNameTextField;
@@ -20,5 +20,7 @@
 - (IBAction)cancelIntervalButton:(id)sender;
 
 - (IBAction)saveIntervalButton:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIPickerView *intervalPicker;
 
 @end

@@ -11,6 +11,8 @@
 
 @interface WorkoutSvcCache : NSObject <WorkoutSvc>
 
++ (id) workoutSvcCacheSingleton;
+
 - (Workout *) createWorkout: (Workout *)workout;
 - (NSMutableArray *) retrieveAllWorkouts;
 - (Workout *) updateWorkout: (Workout *)workout;
