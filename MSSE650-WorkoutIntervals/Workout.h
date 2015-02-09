@@ -14,7 +14,7 @@
 @property (nonatomic) int ident;
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSMutableArray *intervals;
-@property (readonly) NSInteger *duration;
+@property (nonatomic, readonly) int duration;
 
 - (instancetype)initWithName:(NSString *)name andIntervals:(NSArray *) intervals;
 

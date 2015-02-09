@@ -12,7 +12,7 @@
 #import "WorkoutsTableViewController.h"
 
 // TODO, update to singleton
-#import "WorkoutSvcCache.h"
+//#import "WorkoutSvcCache.h"
 
 @interface MainViewController ()
 
@@ -37,6 +37,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -53,6 +54,6 @@
     }
     
 }
-
+*/
 
 @end

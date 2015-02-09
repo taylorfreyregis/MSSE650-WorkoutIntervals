@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CreateWorkoutViewController.h"
 
-@interface WorkoutsTableViewController : UITableViewController
+@interface WorkoutsTableViewController : UITableViewController <WorkoutCreatedDelegate>
 
 @property (nonatomic) NSMutableArray *workouts;
+
+@property (strong, nonatomic) IBOutlet UITableView *workoutTableView;
 
 - (IBAction)doneButton:(id)sender;
 

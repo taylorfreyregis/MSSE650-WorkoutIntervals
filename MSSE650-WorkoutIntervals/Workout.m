@@ -40,8 +40,10 @@
 - (void)calculateDuration {
     _duration = 0;
     for (Interval *interval in self.intervals) {
+        NSLog(@"calculating duration: %d, adding interval duration: %d", _duration, interval.duration);
         _duration += interval.duration;
     }
 }
+
 
 @end

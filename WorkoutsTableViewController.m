@@ -8,6 +8,8 @@
 
 #import "WorkoutsTableViewController.h"
 #import "Workout.h"
+#import "WorkoutSvcCache.h"
+
 @interface WorkoutsTableViewController ()
 
 @end
@@ -34,7 +36,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+# pragma mark - TableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -43,15 +45,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.workouts count];
+    return [[[WorkoutSvcCache workoutSvcCacheSingleton] retrieveAllWorkouts] count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WorkoutIdentifier"];
-
-    Workout *workout = (self.workouts)[indexPath.row];
+    static NSString *simpleTableIdentifier = @"WorkoutIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    Workout *workout = [[[WorkoutSvcCache workoutSvcCacheSingleton] retrieveAllWorkouts] objectAtIndex:indexPath.row];
     cell.textLabel.text = workout.name;
 
     return cell;
@@ -92,17 +100,40 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    // Verify the segue via the identifier
+    if ([[segue identifier] isEqualToString:@"WorkoutsToCreateWorkout"]) {
+        
+        CreateWorkoutViewController *destination = segue.destinationViewController;
+        
+        [destination setDelegate: self];
+    }
 }
-*/
+
+# pragma mark - IBActions
 
 - (IBAction)doneButton:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:true];
 }
+
+# pragma mark - WorkoutCreatedDelegate
+
+- (void) workoutCreated:(Workout *) workout {
+    
+    [self updateData];
+}
+
+# pragma mark - WorkoutsTableViewController
+
+- (void) updateData {
+    [self.workoutTableView reloadData];
+}
+
 @end

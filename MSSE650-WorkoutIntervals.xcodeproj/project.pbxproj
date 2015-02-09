@@ -13,6 +13,7 @@
 		7470D7941A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470D7931A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m */; };
 		7470D7A01A72E4DB006C462E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470D79E1A72E4DB006C462E /* MainViewController.m */; };
 		74753EAD1A8843ED00AD92BE /* IntervalPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74753EAC1A8843ED00AD92BE /* IntervalPickerViewController.m */; };
+		74DEEB7B1A886BD40018FDC3 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DEEB7A1A886BD40018FDC3 /* Utilities.m */; };
 		FA82F0851A7ECB39009BD6FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA82F0841A7ECB39009BD6FE /* Main.storyboard */; };
 		FA82F0891A7EE82A009BD6FE /* WorkoutsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82F0881A7EE82A009BD6FE /* WorkoutsTableViewController.m */; };
 		FAAA85C31A756F7D00A65F9D /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85C21A756F7D00A65F9D /* Workout.m */; };
@@ -49,6 +50,8 @@
 		74753EA41A880B6E00AD92BE /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		74753EAB1A8843ED00AD92BE /* IntervalPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalPickerViewController.h; sourceTree = "<group>"; };
 		74753EAC1A8843ED00AD92BE /* IntervalPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalPickerViewController.m; sourceTree = "<group>"; };
+		74DEEB791A886BD40018FDC3 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		74DEEB7A1A886BD40018FDC3 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		FA82F0841A7ECB39009BD6FE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FA82F0871A7EE82A009BD6FE /* WorkoutsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutsTableViewController.h; sourceTree = "<group>"; };
 		FA82F0881A7EE82A009BD6FE /* WorkoutsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutsTableViewController.m; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				74753EA41A880B6E00AD92BE /* Constants.h */,
+				74DEEB791A886BD40018FDC3 /* Utilities.h */,
+				74DEEB7A1A886BD40018FDC3 /* Utilities.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 				FA82F0891A7EE82A009BD6FE /* WorkoutsTableViewController.m in Sources */,
 				FAAA85D31A75890100A65F9D /* CreateWorkoutViewController.m in Sources */,
 				7470D77A1A72E440006C462E /* main.m in Sources */,
+				74DEEB7B1A886BD40018FDC3 /* Utilities.m in Sources */,
 				74753EAD1A8843ED00AD92BE /* IntervalPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

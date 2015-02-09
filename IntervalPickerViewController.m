@@ -64,6 +64,8 @@ Interval *currentlySelectedInterval;
  }
 */
 
+# pragma mark - IBActions
+
 - (IBAction)addIntervalAction:(id)sender {
     
     if ([self delegate] != nil) {

@@ -8,13 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import "IntervalPickerViewController.h"
+#import "Workout.h"
+
+@protocol WorkoutCreatedDelegate <NSObject>
+
+@required
+- (void) workoutCreated:(Workout *) workout;
+
+@end
 
 @interface CreateWorkoutViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, IntervalSelectedDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *workoutDurationLabel;
-@property (weak, nonatomic) IBOutlet UITextField *workoutNameTextView;
+@property (nonatomic) id<WorkoutCreatedDelegate> delegate;
 
-- (IBAction)setDurationButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *workoutDurationLabel;
+@property (weak, nonatomic) IBOutlet UITextField *workoutNameTextField;
+
 - (IBAction)cancelWorkoutButton:(id)sender;
 
 - (IBAction)saveWorkoutButton:(id)sender;

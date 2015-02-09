@@ -11,6 +11,7 @@
 #import "Interval.h"
 #import "IntervalSvcCache.h"
 #import "WorkoutSvcCache.h"
+#import "Utilities.h"
 
 #import "IntervalPickerViewController.h"
 
@@ -47,7 +48,7 @@ UIGestureRecognizer *tapper;
     workout = [[Workout alloc] init];
     [self.intervalTableView setDelegate:self];
     [self.intervalTableView setDataSource:self];
-    [self.intervalTableView reloadData];    
+    [self updateData];
 }
 
 - (void) initTapper {
@@ -77,17 +78,22 @@ UIGestureRecognizer *tapper;
     }
 }
 
-# pragma mark - Workout
-
-- (IBAction)setDurationButton:(id)sender {
-    //Open spinner with durations
-}
+# pragma mark - IBActions
 
 - (IBAction)cancelWorkoutButton:(id)sender {
     [self.navigationController popViewControllerAnimated:true];
 }
 
 - (IBAction)saveWorkoutButton:(id)sender {
+    
+    if ([self validate]) {
+        [[WorkoutSvcCache workoutSvcCacheSingleton] createWorkout:workout];
+        
+        if ([self delegate] != nil) {
+            [[self delegate] workoutCreated:workout];
+        }
+        [self.navigationController popViewControllerAnimated:true];
+    }
 }
 
 # pragma mark - UITableViewDataSource
@@ -120,7 +126,36 @@ UIGestureRecognizer *tapper;
 - (void) selectedInterval:(Interval *) interval {
     
     [workout addInterval:interval];
+    [self updateData];
+}
+
+# pragma mark - CreateWorkoutViewController
+
+- (void) updateData {
     [self.intervalTableView reloadData];
+    [self.workoutDurationLabel setText:[Utilities getHumanReadableDuration:(int)workout.duration]];
+}
+
+/**
+ *  Validates the inputs before saving. Must be a name and at least one interval.
+ *
+ *  @return true if the input values are valid, false otherwise
+ */
+- (bool) validate {
+    
+    // Must have valid name
+    NSString *name = [self.workoutNameTextField text];
+    if (name == nil || name.length == 0) {
+        return false;
+    }
+    workout.name = name;
+    
+    // Must have at least one interval
+    if (workout.intervals == nil || ([workout.intervals count] <=0)) {
+        return false;
+    }
+    
+    return true;
 }
 
 @end
