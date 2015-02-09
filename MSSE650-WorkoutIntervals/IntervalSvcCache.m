@@ -14,7 +14,7 @@ NSMutableArray *intervals;
 
 #pragma mark Singleton Methods
 
-+ (id) intervalSvcCacheSingleton {
++ (id) intervalSvcSingleton {
     static IntervalSvcCache *intervalSingleton = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

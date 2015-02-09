@@ -11,6 +11,8 @@
 
 @protocol WorkoutSvc <NSObject>
 
++ (id) workoutSvcSingleton;
+
 - (Workout *) createWorkout: (Workout *)workout;
 - (NSMutableArray *) retrieveAllWorkouts;
 - (Workout *) updateWorkout: (Workout *)workout;

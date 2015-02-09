@@ -219,7 +219,7 @@ UIGestureRecognizer *tapper;
         Interval *interval = [[Interval alloc] initWithName:self.intervalNameTextField.text andDuration:duration];
         
         // Save Interval
-        [[IntervalSvcCache intervalSvcCacheSingleton] createInterval:interval];
+        [[IntervalSvcCache intervalSvcSingleton] createInterval:interval];
     }
     
     [self.navigationController popViewControllerAnimated:true];

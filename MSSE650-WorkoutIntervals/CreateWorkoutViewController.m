@@ -87,7 +87,7 @@ UIGestureRecognizer *tapper;
 - (IBAction)saveWorkoutButton:(id)sender {
     
     if ([self validate]) {
-        [[WorkoutSvcCache workoutSvcCacheSingleton] createWorkout:workout];
+        [[WorkoutSvcCache workoutSvcSingleton] createWorkout:workout];
         
         if ([self delegate] != nil) {
             [[self delegate] workoutCreated:workout];

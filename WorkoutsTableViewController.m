@@ -45,7 +45,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [[[WorkoutSvcCache workoutSvcCacheSingleton] retrieveAllWorkouts] count];
+    return [[[WorkoutSvcCache workoutSvcSingleton] retrieveAllWorkouts] count];
 }
 
 
@@ -59,7 +59,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    Workout *workout = [[[WorkoutSvcCache workoutSvcCacheSingleton] retrieveAllWorkouts] objectAtIndex:indexPath.row];
+    Workout *workout = [[[WorkoutSvcCache workoutSvcSingleton] retrieveAllWorkouts] objectAtIndex:indexPath.row];
     cell.textLabel.text = workout.name;
 
     return cell;

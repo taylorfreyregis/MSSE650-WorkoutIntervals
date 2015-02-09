@@ -14,6 +14,8 @@
 		7470D7A01A72E4DB006C462E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470D79E1A72E4DB006C462E /* MainViewController.m */; };
 		74753EAD1A8843ED00AD92BE /* IntervalPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74753EAC1A8843ED00AD92BE /* IntervalPickerViewController.m */; };
 		74DEEB7B1A886BD40018FDC3 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DEEB7A1A886BD40018FDC3 /* Utilities.m */; };
+		74DEEB7E1A887A9B0018FDC3 /* IntervalSvcArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DEEB7D1A887A9B0018FDC3 /* IntervalSvcArchive.m */; };
+		74DEEB811A8881490018FDC3 /* IntervalsSvcArchiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DEEB801A8881490018FDC3 /* IntervalsSvcArchiveTests.m */; };
 		FA82F0851A7ECB39009BD6FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA82F0841A7ECB39009BD6FE /* Main.storyboard */; };
 		FA82F0891A7EE82A009BD6FE /* WorkoutsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82F0881A7EE82A009BD6FE /* WorkoutsTableViewController.m */; };
 		FAAA85C31A756F7D00A65F9D /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85C21A756F7D00A65F9D /* Workout.m */; };
@@ -52,6 +54,9 @@
 		74753EAC1A8843ED00AD92BE /* IntervalPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalPickerViewController.m; sourceTree = "<group>"; };
 		74DEEB791A886BD40018FDC3 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		74DEEB7A1A886BD40018FDC3 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		74DEEB7C1A887A9B0018FDC3 /* IntervalSvcArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalSvcArchive.h; sourceTree = "<group>"; };
+		74DEEB7D1A887A9B0018FDC3 /* IntervalSvcArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalSvcArchive.m; sourceTree = "<group>"; };
+		74DEEB801A8881490018FDC3 /* IntervalsSvcArchiveTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalsSvcArchiveTests.m; sourceTree = "<group>"; };
 		FA82F0841A7ECB39009BD6FE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FA82F0871A7EE82A009BD6FE /* WorkoutsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutsTableViewController.h; sourceTree = "<group>"; };
 		FA82F0881A7EE82A009BD6FE /* WorkoutsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutsTableViewController.m; sourceTree = "<group>"; };
@@ -139,6 +144,7 @@
 			children = (
 				7470D7931A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m */,
 				7470D7911A72E440006C462E /* Supporting Files */,
+				74DEEB801A8881490018FDC3 /* IntervalsSvcArchiveTests.m */,
 			);
 			path = "MSSE650-WorkoutIntervalsTests";
 			sourceTree = "<group>";
@@ -201,6 +207,8 @@
 				FAAA85CC1A75847A00A65F9D /* WorkoutSvc.h */,
 				FAAA85CD1A7584E300A65F9D /* WorkoutSvcCache.h */,
 				FAAA85CE1A7584E300A65F9D /* WorkoutSvcCache.m */,
+				74DEEB7C1A887A9B0018FDC3 /* IntervalSvcArchive.h */,
+				74DEEB7D1A887A9B0018FDC3 /* IntervalSvcArchive.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -304,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74DEEB7E1A887A9B0018FDC3 /* IntervalSvcArchive.m in Sources */,
 				FAAA85DC1A75DD8B00A65F9D /* CreateIntervalViewController.m in Sources */,
 				FAAA85CB1A7578C400A65F9D /* IntervalSvcCache.m in Sources */,
 				FAC057B61A7F121900C43F2E /* PerformWorkoutViewController.m in Sources */,
@@ -324,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74DEEB811A8881490018FDC3 /* IntervalsSvcArchiveTests.m in Sources */,
 				7470D7941A72E440006C462E /* MSSE650_WorkoutIntervalsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

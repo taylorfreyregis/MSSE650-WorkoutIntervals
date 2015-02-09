@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Interval : NSObject
+@interface Interval : NSObject <NSCoding>
 
 @property (nonatomic) int ident;
 @property (nonatomic) NSString *name;

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Interval.h"
 
-@interface Workout : NSObject
+@interface Workout : NSObject <NSCoding>
 
 @property (nonatomic) int ident;
 @property (nonatomic) NSString *name;

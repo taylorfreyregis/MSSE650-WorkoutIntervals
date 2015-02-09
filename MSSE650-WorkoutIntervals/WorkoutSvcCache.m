@@ -15,8 +15,8 @@ NSMutableArray *workouts;
 
 #pragma mark Singleton
 
-+ (id) workoutSvcCacheSingleton {
-    static IntervalSvcCache *workoutSingleton = nil;
++ (id) workoutSvcSingleton {
+    static WorkoutSvcCache *workoutSingleton = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         workoutSingleton = [[self alloc] init];
@@ -60,7 +60,7 @@ NSMutableArray *workouts;
 
 - (void) createStaticWorkouts {
     
-    IntervalSvcCache *intervalCache = [IntervalSvcCache intervalSvcCacheSingleton];
+    IntervalSvcCache *intervalCache = [IntervalSvcCache intervalSvcSingleton];
     
     NSArray *intervals = [intervalCache retrieveAllIntervals];
     NSArray *firstWorkoutIntervals = [[NSArray alloc] initWithObjects:intervals[0], intervals[1], nil];

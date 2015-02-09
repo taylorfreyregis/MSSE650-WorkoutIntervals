@@ -38,20 +38,20 @@ Interval *currentlySelectedInterval;
 
 // returns the # of rows in component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    int numOfRows = (int)[[[IntervalSvcCache intervalSvcCacheSingleton] retrieveAllIntervals] count];
+    int numOfRows = (int)[[[IntervalSvcCache intervalSvcSingleton] retrieveAllIntervals] count];
     return numOfRows;
 }
 
 # pragma mark - UIPickerViewDelegate
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSString *display = [[[[IntervalSvcCache intervalSvcCacheSingleton] retrieveAllIntervals] objectAtIndex:row] name];
+    NSString *display = [[[[IntervalSvcCache intervalSvcSingleton] retrieveAllIntervals] objectAtIndex:row] name];
     return display;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
-    currentlySelectedInterval = [[[IntervalSvcCache intervalSvcCacheSingleton] retrieveAllIntervals] objectAtIndex:row];
+    currentlySelectedInterval = [[[IntervalSvcCache intervalSvcSingleton] retrieveAllIntervals] objectAtIndex:row];
 }
 
 /*
