@@ -9,8 +9,8 @@
 #import "CreateWorkoutViewController.h"
 #import "Workout.h"
 #import "Interval.h"
-#import "IntervalSvcCache.h"
-#import "WorkoutSvcCache.h"
+#import "IntervalSvcArchive.h"
+#import "WorkoutSvcArchive.h"
 #import "Utilities.h"
 
 #import "IntervalPickerViewController.h"
@@ -87,7 +87,7 @@ UIGestureRecognizer *tapper;
 - (IBAction)saveWorkoutButton:(id)sender {
     
     if ([self validate]) {
-        [[WorkoutSvcCache workoutSvcSingleton] createWorkout:workout];
+        [[WorkoutSvcArchive workoutSvcSingleton] createWorkout:workout];
         
         if ([self delegate] != nil) {
             [[self delegate] workoutCreated:workout];

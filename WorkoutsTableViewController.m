@@ -8,7 +8,7 @@
 
 #import "WorkoutsTableViewController.h"
 #import "Workout.h"
-#import "WorkoutSvcCache.h"
+#import "WorkoutSvcArchive.h"
 
 @interface WorkoutsTableViewController ()
 
@@ -45,7 +45,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [[[WorkoutSvcCache workoutSvcSingleton] retrieveAllWorkouts] count];
+    return [[[WorkoutSvcArchive workoutSvcSingleton] retrieveAllWorkouts] count];
 }
 
 
@@ -59,7 +59,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    Workout *workout = [[[WorkoutSvcCache workoutSvcSingleton] retrieveAllWorkouts] objectAtIndex:indexPath.row];
+    Workout *workout = [[[WorkoutSvcArchive workoutSvcSingleton] retrieveAllWorkouts] objectAtIndex:indexPath.row];
     cell.textLabel.text = workout.name;
 
     return cell;

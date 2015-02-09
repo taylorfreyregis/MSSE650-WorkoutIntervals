@@ -11,9 +11,6 @@
 #import "Workout.h"
 #import "WorkoutsTableViewController.h"
 
-// TODO, update to singleton
-//#import "WorkoutSvcCache.h"
-
 @interface MainViewController ()
 
 @property (nonatomic) NSMutableArray *intervals;
