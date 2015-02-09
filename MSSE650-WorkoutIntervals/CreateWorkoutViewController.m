@@ -24,11 +24,15 @@ Workout *workout;
 
 UIAlertController *intervalPickerAlert;
 
+// Used to remove focus from the textfields http://stackoverflow.com/questions/5306240/iphone-dismiss-keyboard-when-touching-outside-of-textfield
+UIGestureRecognizer *tapper;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    workout = [[Workout alloc] init];
+
+    [self initialize];
+    [self initTapper];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,50 +42,42 @@ UIAlertController *intervalPickerAlert;
 
 # pragma mark - Initialization
 
-//- (void) createAndShowAlert {
-//    intervalPickerAlert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-//    
-//    UIAlertAction* addAction = [UIAlertAction actionWithTitle:@"Add" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-//        
-//        [intervalPickerAlert dismissViewControllerAnimated:YES completion:nil];
-//    }];
-//    
-//    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-//        [intervalPickerAlert dismissViewControllerAnimated:YES completion:nil];
-//    }];
-//    
-//    [intervalPickerAlert addAction:addAction];
-//    [intervalPickerAlert addAction:cancelAction];
-//    
-////    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(-8, self.view.center.y-100, self.view.frame.size.width, 200)];
-////    UIPickerView *pickerView = [[UIPickerView alloc] init];
-////    pickerView.center = self.view.center;
-//    
-//    CGRect pickerFrame = CGRectMake(-8, 0, self.view.frame.size.width, 100);
-//    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
-//    
-//    [pickerView setShowsSelectionIndicator:YES];
-//    
-//    pickerView.delegate = self;
-//    pickerView.dataSource = self;
-//    
-//    [intervalPickerAlert.view addSubview:pickerView];
-//    [self presentViewController:intervalPickerAlert animated:true completion:nil];
-//}
+- (void) initialize {
+    
+    workout = [[Workout alloc] init];
+    [self.intervalTableView setDelegate:self];
+    [self.intervalTableView setDataSource:self];
+    [self.intervalTableView reloadData];    
+}
 
+- (void) initTapper {
+    tapper = [[UITapGestureRecognizer alloc]
+              initWithTarget:self action:@selector(viewEndEditing:)];
+    tapper.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapper];
+}
 
-#pragma mark - Navigation
+- (void) viewEndEditing:(UITapGestureRecognizer *) sender {
+    [self.view endEditing:true];
+}
+
+# pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    NSLog(@"prepareForSegue.. CREATE WORKOUT!!! source: %@, destination: %@", segue.sourceViewController, segue.destinationViewController);
+    // Verify the segue via the identifier
+    if ([[segue identifier] isEqualToString:@"CreateWorkoutToAddInterval"]) {
+        
+        IntervalPickerViewController *destination = segue.destinationViewController;
+        
+        [destination setDelegate: self];
+    }
 }
 
-
-#pragma mark - Workout
+# pragma mark - Workout
 
 - (IBAction)setDurationButton:(id)sender {
     //Open spinner with durations
@@ -91,15 +87,14 @@ UIAlertController *intervalPickerAlert;
     [self.navigationController popViewControllerAnimated:true];
 }
 
-- (IBAction)addIntervalButton:(id)sender {
-    // Open spinner and add selected one to the list of Intervals stored within the Workout
-
-}
-
 - (IBAction)saveWorkoutButton:(id)sender {
 }
 
-#pragma mark - UITableViewDataSource
+# pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [workout.intervals count];
@@ -107,7 +102,7 @@ UIAlertController *intervalPickerAlert;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+    static NSString *simpleTableIdentifier = @"WorkoutIntervalCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
@@ -116,8 +111,16 @@ UIAlertController *intervalPickerAlert;
     }
     
     Interval *interval = [workout.intervals objectAtIndex:indexPath.row];
-    cell.textLabel.text = [interval description];
+    cell.textLabel.text = [interval name];
     return cell;
+}
+
+# pragma mark - IntervalSelectedDelegate
+
+- (void) selectedInterval:(Interval *) interval {
+    
+    [workout addInterval:interval];
+    [self.intervalTableView reloadData];
 }
 
 @end

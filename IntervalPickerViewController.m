@@ -9,7 +9,14 @@
 #import "IntervalPickerViewController.h"
 #import "IntervalSvcCache.h"
 
+@interface IntervalPickerViewController ()
+
+@end
+
 @implementation IntervalPickerViewController 
+
+
+Interval *currentlySelectedInterval;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -21,8 +28,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-# pragma mark - Initialization
 
 # pragma mark - UIPickerViewDataSource
 
@@ -46,28 +51,30 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
-    //TODO TBD
-//    [workout addInterval:[[[IntervalSvcCache intervalSvcCacheSingleton] retrieveAllIntervals] objectAtIndex:row]];
+    currentlySelectedInterval = [[[IntervalSvcCache intervalSvcCacheSingleton] retrieveAllIntervals] objectAtIndex:row];
 }
 
-
+/*
  # pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
-     
-     NSLog(@"prepareForSegue.. PICKER!!! source: %@, destination: %@", segue.sourceViewController, segue.destinationViewController);
  }
- 
+*/
 
 - (IBAction)addIntervalAction:(id)sender {
+    
+    if ([self delegate] != nil) {
+        [[self delegate] selectedInterval:currentlySelectedInterval];
+    }
     
     [self.navigationController popViewControllerAnimated:true];
 }
 
 - (IBAction)cancelAction:(id)sender {
     
+    [self.navigationController popViewControllerAnimated:true];
 }
 @end

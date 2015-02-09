@@ -7,16 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IntervalPickerViewController.h"
 
-@interface CreateWorkoutViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface CreateWorkoutViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, IntervalSelectedDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *workoutDurationLabel;
 @property (weak, nonatomic) IBOutlet UITextField *workoutNameTextView;
+
 - (IBAction)setDurationButton:(id)sender;
 - (IBAction)cancelWorkoutButton:(id)sender;
 
-- (IBAction)addIntervalButton:(id)sender;
 - (IBAction)saveWorkoutButton:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UITableView *intervalTableView;
 
 @end

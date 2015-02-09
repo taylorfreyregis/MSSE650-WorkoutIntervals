@@ -10,17 +10,38 @@
 
 @implementation Workout
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.intervals = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
+}
+
 -(instancetype) initWithName:(NSString *)name andIntervals:(NSArray *)intervals {
     self = [super init];
     if (self){
         self.name = name;
-        self.intervals = [[NSMutableArray alloc ] initWithArray: intervals];
+        self.intervals = [[NSMutableArray alloc] init];
+        if (intervals != nil && [intervals count] > 0) {
+            [self.intervals addObjectsFromArray:intervals];
+        }
+        [self calculateDuration];
     }
     return self;
 }
 
 - (void) addInterval:(Interval *)interval {
     [self.intervals addObject:interval];
+    [self calculateDuration];
+}
+
+- (void)calculateDuration {
+    _duration = 0;
+    for (Interval *interval in self.intervals) {
+        _duration += interval.duration;
+    }
 }
 
 @end

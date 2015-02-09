@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Interval.h"
+
+@protocol IntervalSelectedDelegate <NSObject>
+
+@required
+- (void) selectedInterval:(Interval *) interval;
+
+@end
 
 @interface IntervalPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+
+@property (nonatomic) id<IntervalSelectedDelegate> delegate;
 
 - (IBAction)addIntervalAction:(id)sender;
 - (IBAction)cancelAction:(id)sender;

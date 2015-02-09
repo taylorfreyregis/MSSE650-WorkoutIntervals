@@ -221,6 +221,8 @@ UIGestureRecognizer *tapper;
         // Save Interval
         [[IntervalSvcCache intervalSvcCacheSingleton] createInterval:interval];
     }
+    
+    [self.navigationController popViewControllerAnimated:true];
 }
 
 - (IBAction)cancelIntervalButton:(id)sender {
