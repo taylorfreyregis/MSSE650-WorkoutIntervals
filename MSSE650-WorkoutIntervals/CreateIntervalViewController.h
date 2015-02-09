@@ -8,19 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreateIntervalViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
-
+@interface CreateIntervalViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *intervalNameTextField;
-
-@property (weak, nonatomic) IBOutlet UILabel *intervalDurationLabel;
-
-- (IBAction)intervalSetDuration:(id)sender;
 
 - (IBAction)cancelIntervalButton:(id)sender;
 
 - (IBAction)saveIntervalButton:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIPickerView *intervalPicker;
+@property (weak, nonatomic) IBOutlet UITextField *hoursTextField;
+@property (weak, nonatomic) IBOutlet UIStepper *hoursStepper;
+- (IBAction)hoursStepperAction:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITextField *minutesTextField;
+@property (weak, nonatomic) IBOutlet UIStepper *minutesStepper;
+- (IBAction)minutesStepperAction:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITextField *secondsTextField;
+@property (weak, nonatomic) IBOutlet UIStepper *secondsStepper;
+- (IBAction)secondsStepperAction:(id)sender;
+
+//@property (weak, nonatomic) IBOutlet UIPickerView *intervalPicker;
 
 @end

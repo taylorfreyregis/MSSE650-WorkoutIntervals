@@ -37,18 +37,6 @@ NSMutableArray *intervals;
     return nil;
 }
 
-+(NSArray*) intervalIncrements
-{
-    static NSArray* increments = nil;
-    
-    if (increments == nil)
-    {
-        [NSArrayWithObjects:30, 60, 90, 120, 180, 300, 480, 600, 900, 1200, 1800, nil];
-    }
-    
-    return increments;
-}
-
 - (Interval *) createInterval: (Interval *)interval {
 
     [intervals addObject:interval];

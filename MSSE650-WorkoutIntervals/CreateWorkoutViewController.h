@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "IntervalSvcCache.h"
 
 @interface CreateWorkoutViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) IntervalSvcCache *intervalSvcCache;
 @property (weak, nonatomic) IBOutlet UILabel *workoutDurationLabel;
 @property (weak, nonatomic) IBOutlet UITextField *workoutNameTextView;
 - (IBAction)setDurationButton:(id)sender;
