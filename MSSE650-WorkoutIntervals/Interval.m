@@ -14,6 +14,8 @@ static NSString *const DURATION = @"duration";
 
 @implementation Interval
 
+# pragma mark - Initialization
+
 -(instancetype) initWithName:(NSString *)name andDuration:(int)seconds {
     self = [super init];
     if (self){
@@ -23,11 +25,7 @@ static NSString *const DURATION = @"duration";
     return self;
 }
 
-- (void) encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeInt:self.ident forKey:IDENTITY];
-    [aCoder encodeObject:self.name forKey:NAME];
-    [aCoder encodeInt:self.duration forKey:DURATION];
-}
+#pragma mark - NSCoding
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
     self = [super init];
@@ -38,6 +36,14 @@ static NSString *const DURATION = @"duration";
     }
     return self;
 }
+
+- (void) encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeInt:self.ident forKey:IDENTITY];
+    [aCoder encodeObject:self.name forKey:NAME];
+    [aCoder encodeInt:self.duration forKey:DURATION];
+}
+
+# pragma mark - NSObject
 
 - (NSString *) description {
     return [NSString stringWithFormat:@"Interval - Id: %d, Name: %@, Duration: %d", self.ident, self.name, self.duration];

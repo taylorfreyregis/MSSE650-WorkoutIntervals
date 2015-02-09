@@ -8,7 +8,13 @@
 
 #import "Workout.h"
 
+static NSString *const IDENTITY = @"identity";
+static NSString *const NAME = @"name";
+static NSString *const INTERVALS = @"intervals";
+
 @implementation Workout
+
+#pragma mark - Initialization
 
 - (instancetype)init {
     self = [super init];
@@ -30,6 +36,30 @@
         [self calculateDuration];
     }
     return self;
+}
+
+#pragma mark - NSCoding
+
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    if (self) {
+        self.ident = [aDecoder decodeIntForKey:IDENTITY];
+        self.name = [aDecoder decodeObjectForKey:NAME];
+        self.intervals = [aDecoder decodeObjectForKey:INTERVALS];
+    }
+    return self;
+}
+
+- (void) encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeInt:self.ident forKey:IDENTITY];
+    [aCoder encodeObject:self.name forKey:NAME];
+    [aCoder encodeObject:self.intervals forKey:INTERVALS]; // will this work?
+}
+
+# pragma mark - NSObject
+
+- (NSString *) description {
+    return [NSString stringWithFormat:@"Interval - Id: %d, Name: %@, Duration: %d", self.ident, self.name, self.duration];
 }
 
 - (void) addInterval:(Interval *)interval {
