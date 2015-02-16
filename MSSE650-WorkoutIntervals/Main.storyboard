@@ -282,6 +282,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="intervalPickerView" destination="pfz-23-7Mo" id="emi-7C-Y6x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AdV-OZ-HP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

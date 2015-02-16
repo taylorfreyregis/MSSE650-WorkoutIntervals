@@ -58,6 +58,8 @@ NSMutableArray *intervals;
 
 - (NSMutableArray *) retrieveAllIntervals {
     
+    intervals = [[NSMutableArray alloc] init];
+    
     // Create Query
     NSString *sqlQuery = [NSString stringWithFormat:@"SELECT Intervals.Id, Intervals.Name, Intervals.Duration FROM Intervals;"];
     sqlite3_stmt *statement;
@@ -71,7 +73,7 @@ NSMutableArray *intervals;
             // Pull out the values, ceate and assign to new Interval, add to internal array
             int ident = sqlite3_column_int(statement, 0);
             char *nameChars = (char *) sqlite3_column_text(statement, 1);
-            int duration = (int) sqlite3_column_text(statement, 2);
+            int duration = (int) sqlite3_column_int(statement, 2);
             NSString *name = [[NSString alloc] initWithUTF8String:nameChars];
             Interval *interval = [[Interval alloc] initWithId:ident andName:name andDuration:duration];
             [intervals addObject:interval];
@@ -83,6 +85,35 @@ NSMutableArray *intervals;
         NSLog(@"Error retrieving intervals. Error: %s", sqlite3_errmsg([WorkoutDatabaseManager manager].database));
     }
     return intervals;
+}
+
+- (Interval *)retrieveIntervalWithId:(int) ident {
+    
+    Interval *interval = nil;
+    
+    // Create query
+    NSString *sqlQuery = [NSString stringWithFormat:@"SELECT Interval.Id, Interval.Name, Interval.Duration FROM Intervals WHERE Interval.Id = %d", ident];
+    sqlite3_stmt *statement;
+    
+    // Prepare and execute query
+    if (sqlite3_prepare_v2([WorkoutDatabaseManager manager].database, [sqlQuery UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        
+        // When done, process the last inserted row.
+        if (sqlite3_step(statement) == SQLITE_DONE) {
+            
+            // Pull out the values, ceate and assign to new Interval
+            int ident = sqlite3_column_int(statement, 0);
+            char *nameChars = (char *) sqlite3_column_text(statement, 1);
+            int duration = (int) sqlite3_column_int(statement, 2);
+            NSString *name = [[NSString alloc] initWithUTF8String:nameChars];
+            interval = [[Interval alloc] initWithId:ident andName:name andDuration:duration];
+        } else {
+            NSLog(@"Error inserting interval. Error: %s", sqlite3_errmsg([WorkoutDatabaseManager manager].database));
+        }
+        
+        sqlite3_finalize(statement);
+    }
+    return interval;
 }
 
 - (Interval *) updateInterval: (Interval *)interval {

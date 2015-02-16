@@ -52,11 +52,11 @@ NSMutableArray *intervals;
     return display;
 }
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    
-    //    currentlySelectedInterval = [[[IntervalSvcArchive intervalSvcSingleton] retrieveAllIntervals] objectAtIndex:row];
-        currentlySelectedInterval = [intervals objectAtIndex:row];
-}
+//- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+//    
+//    //    currentlySelectedInterval = [[[IntervalSvcArchive intervalSvcSingleton] retrieveAllIntervals] objectAtIndex:row];
+//        currentlySelectedInterval = [intervals objectAtIndex:row];
+//}
 
 /*
  # pragma mark - Navigation
@@ -73,7 +73,11 @@ NSMutableArray *intervals;
 - (IBAction)addIntervalAction:(id)sender {
     
     if ([self delegate] != nil) {
-        [[self delegate] selectedInterval:currentlySelectedInterval];
+        int selectedRow = (int)[self.intervalPickerView selectedRowInComponent:0];
+        if (selectedRow == -1) {
+            selectedRow = 0;
+        }
+        [[self delegate] selectedInterval:[intervals objectAtIndex:selectedRow]];
     }
     
     [self.navigationController popViewControllerAnimated:true];

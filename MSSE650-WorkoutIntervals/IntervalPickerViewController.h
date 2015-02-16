@@ -18,6 +18,8 @@
 
 @interface IntervalPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIPickerView *intervalPickerView;
+
 @property (nonatomic) id<IntervalSelectedDelegate> delegate;
 
 - (IBAction)addIntervalAction:(id)sender;

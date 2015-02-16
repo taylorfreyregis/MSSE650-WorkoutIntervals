@@ -38,6 +38,16 @@ static NSString *const INTERVALS = @"intervals";
     return self;
 }
 
+-(instancetype) initWithId:(int)ident andName:(NSString *)name {
+    self = [super init];
+    if (self){
+        self.ident = ident;
+        self.name = name;
+        self.intervals = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 -(instancetype) initWithId:(int)ident andName:(NSString *)name andIntervals:(NSArray *)intervals {
     self = [super init];
     if (self){

@@ -8,7 +8,8 @@
 
 #import "WorkoutsTableViewController.h"
 #import "Workout.h"
-#import "WorkoutSvcArchive.h"
+//#import "WorkoutSvcArchive.h"
+#import "WorkoutDatabaseSvc.h"
 
 @interface WorkoutsTableViewController ()
 
@@ -29,6 +30,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = false;
+    _workouts = [NSMutableArray arrayWithArray:[[WorkoutDatabaseSvc workoutSvcSingleton] retrieveAllWorkouts]];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,7 +48,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [[[WorkoutSvcArchive workoutSvcSingleton] retrieveAllWorkouts] count];
+    return [_workouts count];
 }
 
 
@@ -59,7 +62,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    Workout *workout = [[[WorkoutSvcArchive workoutSvcSingleton] retrieveAllWorkouts] objectAtIndex:indexPath.row];
+    Workout *workout = [_workouts objectAtIndex:indexPath.row];
     cell.textLabel.text = workout.name;
 
     return cell;
@@ -127,13 +130,15 @@
 
 - (void) workoutCreated:(Workout *) workout {
     
+    // No longer necessary now that we are pulling out of a central repo? aka SQL
     [self updateData];
 }
 
 # pragma mark - WorkoutsTableViewController
 
 - (void) updateData {
-    [self.workoutTableView reloadData];
+    
+//    [self.workoutTableView reloadData];
 }
 
 @end
