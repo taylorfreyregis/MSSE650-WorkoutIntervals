@@ -23,6 +23,7 @@
 		FAAA85CF1A7584E300A65F9D /* WorkoutSvcCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85CE1A7584E300A65F9D /* WorkoutSvcCache.m */; };
 		FAAA85D31A75890100A65F9D /* CreateWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85D11A75890100A65F9D /* CreateWorkoutViewController.m */; };
 		FAAA85DC1A75DD8B00A65F9D /* CreateIntervalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85DA1A75DD8B00A65F9D /* CreateIntervalViewController.m */; };
+		FAC20B141A91BE71008454AF /* WorkoutDatabaseSvcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC20B131A91BE71008454AF /* WorkoutDatabaseSvcTests.m */; };
 		FAFE7A961A9158800079272E /* WorkoutDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFE7A951A9158800079272E /* WorkoutDatabaseManager.m */; };
 		FAFE7A981A915D3F0079272E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFE7A971A915D3F0079272E /* libsqlite3.dylib */; };
 		FAFE7A9B1A916D6B0079272E /* IntervalDatabaseSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFE7A9A1A916D6B0079272E /* IntervalDatabaseSvc.m */; };
@@ -33,6 +34,7 @@
 		FAFE7AAC1A91907B0079272E /* WorkoutsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFE7AA71A91907B0079272E /* WorkoutsTableViewController.m */; };
 		FAFE7AAE1A9190980079272E /* WorkoutDatabase.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = FAFE7AAD1A9190980079272E /* WorkoutDatabase.sqlite3 */; };
 		FAFE7AB11A9197B90079272E /* WorkoutDatabaseSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFE7AB01A9197B90079272E /* WorkoutDatabaseSvc.m */; };
+		FAFE7AB61A91ADA20079272E /* IntervalDatabaseSvcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFE7AB51A91ADA20079272E /* IntervalDatabaseSvcTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,7 @@
 		FAAA85D11A75890100A65F9D /* CreateWorkoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateWorkoutViewController.m; path = "MSSE650-WorkoutIntervals/CreateWorkoutViewController.m"; sourceTree = "<group>"; };
 		FAAA85D91A75DD8B00A65F9D /* CreateIntervalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateIntervalViewController.h; path = "MSSE650-WorkoutIntervals/CreateIntervalViewController.h"; sourceTree = "<group>"; };
 		FAAA85DA1A75DD8B00A65F9D /* CreateIntervalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateIntervalViewController.m; path = "MSSE650-WorkoutIntervals/CreateIntervalViewController.m"; sourceTree = "<group>"; };
+		FAC20B131A91BE71008454AF /* WorkoutDatabaseSvcTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutDatabaseSvcTests.m; sourceTree = "<group>"; };
 		FAFE7A941A9158800079272E /* WorkoutDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutDatabaseManager.h; sourceTree = "<group>"; };
 		FAFE7A951A9158800079272E /* WorkoutDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutDatabaseManager.m; sourceTree = "<group>"; };
 		FAFE7A971A915D3F0079272E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -98,6 +101,7 @@
 		FAFE7AAD1A9190980079272E /* WorkoutDatabase.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = WorkoutDatabase.sqlite3; sourceTree = "<group>"; };
 		FAFE7AAF1A9197B90079272E /* WorkoutDatabaseSvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutDatabaseSvc.h; sourceTree = "<group>"; };
 		FAFE7AB01A9197B90079272E /* WorkoutDatabaseSvc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutDatabaseSvc.m; sourceTree = "<group>"; };
+		FAFE7AB51A91ADA20079272E /* IntervalDatabaseSvcTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalDatabaseSvcTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 				7470D7911A72E440006C462E /* Supporting Files */,
 				74DEEB801A8881490018FDC3 /* IntervalsSvcArchiveTests.m */,
 				74DEEB851A8889620018FDC3 /* WorkoutsSvcArchiveTests.m */,
+				FAFE7AB51A91ADA20079272E /* IntervalDatabaseSvcTests.m */,
+				FAC20B131A91BE71008454AF /* WorkoutDatabaseSvcTests.m */,
 			);
 			path = "MSSE650-WorkoutIntervalsTests";
 			sourceTree = "<group>";
@@ -387,6 +393,8 @@
 			files = (
 				74DEEB811A8881490018FDC3 /* IntervalsSvcArchiveTests.m in Sources */,
 				74DEEB861A8889620018FDC3 /* WorkoutsSvcArchiveTests.m in Sources */,
+				FAFE7AB61A91ADA20079272E /* IntervalDatabaseSvcTests.m in Sources */,
+				FAC20B141A91BE71008454AF /* WorkoutDatabaseSvcTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,11 +26,17 @@ static WorkoutDatabaseManager* manager;
     if (self = [super init]) {
         NSString *sqliteDb = [[NSBundle mainBundle] pathForResource:DATABASE_NAME ofType:@"sqlite3"];
         
-        if (sqlite3_open([sqliteDb UTF8String], &_database) != SQLITE_OK) {
+        if (sqlite3_open([sqliteDb UTF8String], &_database) == SQLITE_OK) {
+            NSLog(@"Database filed opened at: %@", sqliteDb);
+        } else {
             NSLog(@"Failed to open database!");
         }
     }
     return self;
+}
+
+-(void) dealloc {
+    sqlite3_close(_database);
 }
 
 -(void) closeDatabase {
