@@ -25,6 +25,16 @@ static NSString *const DURATION = @"duration";
     return self;
 }
 
+-(instancetype) initWithId:(int)ident andName:(NSString *)name andDuration:(int)seconds {
+    self = [super init];
+    if (self){
+        self.ident = ident;
+        self.name = name;
+        self.duration = seconds;
+    }
+    return self;
+}
+
 #pragma mark - NSCoding
 
 - (id) initWithCoder:(NSCoder *)aDecoder {

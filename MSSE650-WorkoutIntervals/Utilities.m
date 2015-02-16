@@ -12,7 +12,9 @@
 
 + (NSString *)getHumanReadableDuration:(int) durationInSeconds {
     
-    int hours, minutes, seconds = 0;
+    int hours = 0;
+    int minutes = 0;
+    int seconds = 0;
     
     if (durationInSeconds > 0) {
         hours = (int)(durationInSeconds / 3600);

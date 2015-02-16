@@ -10,5 +10,6 @@
 #define MSSE650_WorkoutIntervals_Constants_h
 
 #define NUMERIC_VALUES @"0123456789"
+#define DATABASE_NAME @"WorkoutDatabase"
 
 #endif

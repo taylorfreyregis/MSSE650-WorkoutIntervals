@@ -16,6 +16,7 @@
 @property (nonatomic) NSMutableArray *intervals;
 @property (nonatomic, readonly) int duration;
 
+-(instancetype) initWithId:(int)ident andName:(NSString *)name andIntervals:(NSArray *)intervals;
 - (instancetype)initWithName:(NSString *)name andIntervals:(NSArray *) intervals;
 
 - (void) addInterval:(Interval *) interval;

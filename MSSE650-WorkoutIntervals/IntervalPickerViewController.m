@@ -7,7 +7,7 @@
 //
 
 #import "IntervalPickerViewController.h"
-#import "IntervalSvcArchive.h"
+#import "IntervalDatabaseSvc.h"
 
 @interface IntervalPickerViewController ()
 
@@ -15,13 +15,13 @@
 
 @implementation IntervalPickerViewController 
 
-
 Interval *currentlySelectedInterval;
+NSMutableArray *intervals;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    intervals = [[IntervalDatabaseSvc intervalSvcSingleton] retrieveAllIntervals];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,20 +38,24 @@ Interval *currentlySelectedInterval;
 
 // returns the # of rows in component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    int numOfRows = (int)[[[IntervalSvcArchive intervalSvcSingleton] retrieveAllIntervals] count];
-    return numOfRows;
+    
+//    int numOfRows = (int)[[[IntervalSvcArchive intervalSvcSingleton] retrieveAllIntervals] count];
+    
+    return intervals.count;
 }
 
 # pragma mark - UIPickerViewDelegate
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSString *display = [[[[IntervalSvcArchive intervalSvcSingleton] retrieveAllIntervals] objectAtIndex:row] name];
+//    NSString *display = [[[[IntervalSvcArchive intervalSvcSingleton] retrieveAllIntervals] objectAtIndex:row] name];
+    NSString *display = [[intervals objectAtIndex:row] name];
     return display;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
-    currentlySelectedInterval = [[[IntervalSvcArchive intervalSvcSingleton] retrieveAllIntervals] objectAtIndex:row];
+    //    currentlySelectedInterval = [[[IntervalSvcArchive intervalSvcSingleton] retrieveAllIntervals] objectAtIndex:row];
+        currentlySelectedInterval = [intervals objectAtIndex:row];
 }
 
 /*

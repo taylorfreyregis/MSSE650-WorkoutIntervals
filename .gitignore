@@ -23,8 +23,11 @@
 # Logs and databases #
 ######################
 *.log
-*.sql
-*.sqlite
+
+# Computer specific #
+#####################
+*.xcuserdatad
+*.xcuserdatad/*:
  
 # OS generated files #
 ######################
