@@ -13,6 +13,16 @@
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *workoutTitle;
 
+@property (weak, nonatomic) IBOutlet UILabel *elapsedTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *remainingTimeLabel;
+
+- (IBAction)startButtonAction:(id)sender;
+- (IBAction)pauseContinueButtonAction:(id)sender;
+- (IBAction)finishButtonAction:(id)sender;
+
 @property (nonatomic) Workout *workout;
+
+@property (weak, nonatomic) IBOutlet UITableView *intervalsTableView;
+
 
 @end

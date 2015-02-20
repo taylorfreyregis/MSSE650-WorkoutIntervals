@@ -7,6 +7,7 @@
 //
 
 #import "WorkoutsTableViewController.h"
+#import "PerformWorkoutViewController.h"
 #import "Workout.h"
 //#import "WorkoutSvcArchive.h"
 #import "WorkoutDatabaseSvc.h"
@@ -39,7 +40,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-# pragma mark - TableViewDataSource
+# pragma mark - TableView
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -68,6 +69,9 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"WorkoutsTableToPerformWorkout" sender:self];
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -117,6 +121,12 @@
         CreateWorkoutViewController *destination = segue.destinationViewController;
         
         [destination setDelegate: self];
+    } else if ([[segue identifier] isEqualToString:@"WorkoutsTableToPerformWorkout"]) {
+        PerformWorkoutViewController *destination = segue.destinationViewController;
+        
+        Workout *workout = [_workouts objectAtIndex:[[self tableView] indexPathForSelectedRow].row];
+        
+        destination.workout = workout;
     }
 }
 
