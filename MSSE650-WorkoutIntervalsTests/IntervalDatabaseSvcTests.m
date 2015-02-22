@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "Interval.h"
+#import "IntervalModel.h"
 #import "IntervalDatabaseSvc.h"
 
 @interface IntervalDatabaseSvcTests : XCTestCase
@@ -17,7 +17,7 @@
 
 @implementation IntervalDatabaseSvcTests
 
-Interval *result;
+IntervalModel *result;
 
 - (void)setUp {
     [super setUp];
@@ -30,7 +30,7 @@ Interval *result;
 }
 
 - (void) testCreateInterval {
-    Interval *start = [[Interval alloc] initWithId:-99 andName:@"TestInterval" andDuration:60];
+    IntervalModel *start = [[IntervalModel alloc] initWithId:-99 andName:@"TestInterval" andDuration:60];
     
     result = [[IntervalDatabaseSvc intervalSvcSingleton] createInterval:start];
     
@@ -48,7 +48,7 @@ Interval *result;
 
 - (void) testDeleteInterval {
     
-    Interval *start = [[Interval alloc] initWithId:result.ident andName:@"DoesntMatter" andDuration:90];
+    IntervalModel *start = [[IntervalModel alloc] initWithId:result.ident andName:@"DoesntMatter" andDuration:90];
     
     result = [[IntervalDatabaseSvc intervalSvcSingleton] deleteInterval:start];
     
@@ -58,7 +58,7 @@ Interval *result;
 
 - (void) testUpdateInterval {
     
-    Interval *updateMe = [[Interval alloc] initWithName:@"UpdateMe" andDuration:900];
+    IntervalModel *updateMe = [[IntervalModel alloc] initWithName:@"UpdateMe" andDuration:900];
     
     result = [[IntervalDatabaseSvc intervalSvcSingleton] createInterval:updateMe];
     

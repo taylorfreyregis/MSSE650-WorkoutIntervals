@@ -15,7 +15,7 @@
 
 @implementation IntervalPickerViewController 
 
-Interval *currentlySelectedInterval;
+IntervalModel *currentlySelectedInterval;
 NSMutableArray *intervals;
 
 - (void)viewDidLoad {

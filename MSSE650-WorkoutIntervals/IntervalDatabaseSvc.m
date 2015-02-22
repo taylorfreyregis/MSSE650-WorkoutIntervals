@@ -34,7 +34,7 @@ NSMutableArray *intervals;
 
 #pragma IntervalSvc Implementation
 
-- (Interval *) createInterval: (Interval *)interval {
+- (IntervalModel *) createInterval: (IntervalModel *)interval {
     
     // Create query
     NSString *sqlQuery = [NSString stringWithFormat:@"INSERT INTO Intervals (Name, Duration) VALUES (\"%@\", %d);", interval.name, interval.duration];
@@ -75,7 +75,7 @@ NSMutableArray *intervals;
             char *nameChars = (char *) sqlite3_column_text(statement, 1);
             int duration = (int) sqlite3_column_int(statement, 2);
             NSString *name = [[NSString alloc] initWithUTF8String:nameChars];
-            Interval *interval = [[Interval alloc] initWithId:ident andName:name andDuration:duration];
+            IntervalModel *interval = [[IntervalModel alloc] initWithId:ident andName:name andDuration:duration];
             [intervals addObject:interval];
             
             NSLog(@"Retrieved interval with id: %d", interval.ident);
@@ -87,9 +87,9 @@ NSMutableArray *intervals;
     return intervals;
 }
 
-- (Interval *)retrieveIntervalWithId:(int) ident {
+- (IntervalModel *)retrieveIntervalWithId:(int) ident {
     
-    Interval *interval = nil;
+    IntervalModel *interval = nil;
     
     // Create query
     NSString *sqlQuery = [NSString stringWithFormat:@"SELECT Interval.Id, Interval.Name, Interval.Duration FROM Intervals WHERE Interval.Id = %d", ident];
@@ -106,7 +106,7 @@ NSMutableArray *intervals;
             char *nameChars = (char *) sqlite3_column_text(statement, 1);
             int duration = (int) sqlite3_column_int(statement, 2);
             NSString *name = [[NSString alloc] initWithUTF8String:nameChars];
-            interval = [[Interval alloc] initWithId:ident andName:name andDuration:duration];
+            interval = [[IntervalModel alloc] initWithId:ident andName:name andDuration:duration];
         } else {
             NSLog(@"Error inserting interval. Error: %s", sqlite3_errmsg([WorkoutDatabaseManager manager].database));
         }
@@ -116,7 +116,7 @@ NSMutableArray *intervals;
     return interval;
 }
 
-- (Interval *) updateInterval: (Interval *)interval {
+- (IntervalModel *) updateInterval: (IntervalModel *)interval {
     
     // Create query
     NSString *sqlQuery = [NSString stringWithFormat:@"UPDATE Intervals SET Interval.Name = \"%@\", Interval.Duration = %d WHERE Interval.Id = %d;", interval.name, interval.duration, interval.ident];
@@ -137,7 +137,7 @@ NSMutableArray *intervals;
     return interval;
 }
 
-- (Interval *) deleteInterval: (Interval *)interval {
+- (IntervalModel *) deleteInterval: (IntervalModel *)interval {
     
     // Create query
     NSString *sqlQuery = [NSString stringWithFormat:@"DELETE FROM Intervals WHERE Interval.Id = %d;", interval.ident];

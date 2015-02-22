@@ -58,7 +58,7 @@ NSMutableArray *workouts;
 # pragma mark IntervalSvc Implementation
 
 
-- (Workout *) createWorkout: (Workout *)workout {
+- (WorkoutModel *) createWorkout: (WorkoutModel *)workout {
     
     [workouts addObject:workout];
     [self writeArchive];
@@ -70,7 +70,7 @@ NSMutableArray *workouts;
     return workouts;
 }
 
-- (Workout *) updateWorkout: (Workout *)workout {
+- (WorkoutModel *) updateWorkout: (WorkoutModel *)workout {
     
     int location = (int)[workouts indexOfObject:workout];
     
@@ -79,7 +79,7 @@ NSMutableArray *workouts;
     return workout;
 }
 
-- (Workout *) deleteWorkout: (Workout *)workout {
+- (WorkoutModel *) deleteWorkout: (WorkoutModel *)workout {
     
     [workouts removeObject:workout];
     [self writeArchive];

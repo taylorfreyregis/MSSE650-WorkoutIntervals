@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Taylor Frey. All rights reserved.
 //
 
-#import "Workout.h"
+#import "WorkoutModel.h"
 
 static NSString *const IDENTITY = @"identity";
 static NSString *const NAME = @"name";
 static NSString *const INTERVALS = @"intervals";
 
-@implementation Workout
+@implementation WorkoutModel
 
 #pragma mark - Initialization
 
@@ -86,14 +86,14 @@ static NSString *const INTERVALS = @"intervals";
     return [NSString stringWithFormat:@"Interval - Id: %d, Name: %@, Duration: %d", self.ident, self.name, self.duration];
 }
 
-- (void) addInterval:(Interval *)interval {
+- (void) addInterval:(IntervalModel *)interval {
     [self.intervals addObject:interval];
     [self calculateDuration];
 }
 
 - (void)calculateDuration {
     _duration = 0;
-    for (Interval *interval in self.intervals) {
+    for (IntervalModel *interval in self.intervals) {
         NSLog(@"calculating duration: %d, adding interval duration: %d", _duration, interval.duration);
         _duration += interval.duration;
     }

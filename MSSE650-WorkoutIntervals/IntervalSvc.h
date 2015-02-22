@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Interval.h"
+#import "IntervalModel.h"
 
 @protocol IntervalSvc <NSObject>
 
 + (id) intervalSvcSingleton;
 
-- (Interval *) createInterval: (Interval *)interval;
+- (IntervalModel *) createInterval: (IntervalModel *)interval;
 - (NSMutableArray *) retrieveAllIntervals;
-- (Interval *) updateInterval: (Interval *)interval;
-- (Interval *) deleteInterval: (Interval *)interval;
+- (IntervalModel *) updateInterval: (IntervalModel *)interval;
+- (IntervalModel *) deleteInterval: (IntervalModel *)interval;
 
 @end

@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Workout.h"
+#import "WorkoutModel.h"
 
 @protocol WorkoutSvc <NSObject>
 
 + (id) workoutSvcSingleton;
 
-- (Workout *) createWorkout: (Workout *)workout;
+- (WorkoutModel *) createWorkout: (WorkoutModel *)workout;
 - (NSMutableArray *) retrieveAllWorkouts;
-- (Workout *) updateWorkout: (Workout *)workout;
-- (Workout *) deleteWorkout: (Workout *)workout;
+- (WorkoutModel *) updateWorkout: (WorkoutModel *)workout;
+- (WorkoutModel *) deleteWorkout: (WorkoutModel *)workout;
 
 @end

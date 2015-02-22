@@ -11,6 +11,6 @@
 
 @interface WorkoutDatabaseSvc : NSObject <WorkoutSvc>
 
-- (NSArray *) retrieveIntervalsForWorkout: (Workout *) workout;
+- (NSArray *) retrieveIntervalsForWorkout: (WorkoutModel *) workout;
 
 @end

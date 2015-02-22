@@ -37,7 +37,7 @@ NSMutableArray *intervals;
     return nil;
 }
 
-- (Interval *) createInterval: (Interval *)interval {
+- (IntervalModel *) createInterval: (IntervalModel *)interval {
 
     [intervals addObject:interval];
     return interval;
@@ -48,13 +48,13 @@ NSMutableArray *intervals;
     return intervals;
 }
 
-- (Interval *) updateInterval: (Interval *)interval {
+- (IntervalModel *) updateInterval: (IntervalModel *)interval {
 
     //TODO Figure out how to update
     return interval;
 }
 
-- (Interval *) deleteInterval: (Interval *)interval {
+- (IntervalModel *) deleteInterval: (IntervalModel *)interval {
     
     [intervals removeObject:interval];
     return interval;
@@ -62,16 +62,16 @@ NSMutableArray *intervals;
 
 - (void) createStaticIntervals {
     // Since we don't have web services or anything stored yet, just create static resources for the workouts
-    Interval *intervalOne = [[Interval alloc] initWithName:@"60 Seconds" andDuration:60];
+    IntervalModel *intervalOne = [[IntervalModel alloc] initWithName:@"60 Seconds" andDuration:60];
     [self createInterval:intervalOne];
     
-    Interval *intervalTwo = [[Interval alloc] initWithName:@"90 Seconds" andDuration:90];
+    IntervalModel *intervalTwo = [[IntervalModel alloc] initWithName:@"90 Seconds" andDuration:90];
     [self createInterval:intervalTwo];
     
-    Interval *intervalThree = [[Interval alloc] initWithName:@"3 minutes" andDuration:180];
+    IntervalModel *intervalThree = [[IntervalModel alloc] initWithName:@"3 minutes" andDuration:180];
     [self createInterval:intervalThree];
     
-    Interval *intervalFour = [[Interval alloc] initWithName:@"5 minutes" andDuration:300];
+    IntervalModel *intervalFour = [[IntervalModel alloc] initWithName:@"5 minutes" andDuration:300];
     [self createInterval:intervalFour];
 }
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-#import "Workout.h"
+#import "WorkoutModel.h"
 #import "WorkoutSvcArchive.h"
 
 @interface WorkoutsSvcArchiveTests : XCTestCase
@@ -33,11 +33,11 @@
     
     int initialCount = (int)[[[WorkoutSvcArchive workoutSvcSingleton] retrieveAllWorkouts] count];
     
-    Interval *intervalOne = [[Interval alloc] initWithName:@"Testing Interval 1" andDuration:180];
-    Interval *intervalTwo = [[Interval alloc] initWithName:@"Testing Interval 2" andDuration:360];
+    IntervalModel *intervalOne = [[IntervalModel alloc] initWithName:@"Testing Interval 1" andDuration:180];
+    IntervalModel *intervalTwo = [[IntervalModel alloc] initWithName:@"Testing Interval 2" andDuration:360];
     
-    Workout *workoutOne = [[Workout alloc] initWithName:@"WorkoutOne" andIntervals:[NSArray arrayWithObjects:intervalOne, intervalTwo, intervalOne, nil]];
-    Workout *workoutTwo = [[Workout alloc] initWithName:@"WorkoutTwo" andIntervals:[NSArray arrayWithObjects:intervalTwo, intervalOne, intervalTwo, nil]];
+    WorkoutModel *workoutOne = [[WorkoutModel alloc] initWithName:@"WorkoutOne" andIntervals:[NSArray arrayWithObjects:intervalOne, intervalTwo, intervalOne, nil]];
+    WorkoutModel *workoutTwo = [[WorkoutModel alloc] initWithName:@"WorkoutTwo" andIntervals:[NSArray arrayWithObjects:intervalTwo, intervalOne, intervalTwo, nil]];
     
     [[WorkoutSvcArchive workoutSvcSingleton] createWorkout:workoutOne];
     [[WorkoutSvcArchive workoutSvcSingleton] createWorkout:workoutTwo];

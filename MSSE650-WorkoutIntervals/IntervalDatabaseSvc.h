@@ -11,6 +11,6 @@
 
 @interface IntervalDatabaseSvc : NSObject <IntervalSvc>
 
-- (Interval *)retrieveIntervalWithId:(int) ident;
+- (IntervalModel *)retrieveIntervalWithId:(int) ident;
 
 @end

@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Interval.h"
+#import "IntervalModel.h"
 
-@interface Workout : NSObject <NSCoding>
+@interface WorkoutModel : NSObject <NSCoding>
 
 @property (nonatomic) int ident;
 @property (nonatomic) NSString *name;
@@ -20,6 +20,6 @@
 - (instancetype) initWithId:(int)ident andName:(NSString *)name;
 - (instancetype)initWithName:(NSString *)name andIntervals:(NSArray *) intervals;
 
-- (void) addInterval:(Interval *) interval;
+- (void) addInterval:(IntervalModel *) interval;
 
 @end

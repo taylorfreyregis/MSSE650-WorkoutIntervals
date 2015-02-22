@@ -21,8 +21,8 @@
 		FA7C98351A99AC1E00E63563 /* IntervalSvcCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7C98341A99AC1E00E63563 /* IntervalSvcCoreData.m */; };
 		FA7C98391A99B06D00E63563 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA7C98371A99B06D00E63563 /* Model.xcdatamodeld */; };
 		FA82F0851A7ECB39009BD6FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA82F0841A7ECB39009BD6FE /* Main.storyboard */; };
-		FAAA85C31A756F7D00A65F9D /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85C21A756F7D00A65F9D /* Workout.m */; };
-		FAAA85C61A756F9200A65F9D /* Interval.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85C51A756F9200A65F9D /* Interval.m */; };
+		FAAA85C31A756F7D00A65F9D /* WorkoutModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85C21A756F7D00A65F9D /* WorkoutModel.m */; };
+		FAAA85C61A756F9200A65F9D /* IntervalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85C51A756F9200A65F9D /* IntervalModel.m */; };
 		FAAA85CB1A7578C400A65F9D /* IntervalSvcCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85CA1A7578C400A65F9D /* IntervalSvcCache.m */; };
 		FAAA85CF1A7584E300A65F9D /* WorkoutSvcCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85CE1A7584E300A65F9D /* WorkoutSvcCache.m */; };
 		FAAA85D31A75890100A65F9D /* CreateWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA85D11A75890100A65F9D /* CreateWorkoutViewController.m */; };
@@ -76,10 +76,10 @@
 		FA7C98341A99AC1E00E63563 /* IntervalSvcCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalSvcCoreData.m; sourceTree = "<group>"; };
 		FA7C98381A99B06D00E63563 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		FA82F0841A7ECB39009BD6FE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		FAAA85C11A756F7D00A65F9D /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
-		FAAA85C21A756F7D00A65F9D /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
-		FAAA85C41A756F9200A65F9D /* Interval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interval.h; sourceTree = "<group>"; };
-		FAAA85C51A756F9200A65F9D /* Interval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interval.m; sourceTree = "<group>"; };
+		FAAA85C11A756F7D00A65F9D /* WorkoutModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutModel.h; sourceTree = "<group>"; };
+		FAAA85C21A756F7D00A65F9D /* WorkoutModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutModel.m; sourceTree = "<group>"; };
+		FAAA85C41A756F9200A65F9D /* IntervalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalModel.h; sourceTree = "<group>"; };
+		FAAA85C51A756F9200A65F9D /* IntervalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalModel.m; sourceTree = "<group>"; };
 		FAAA85C81A75774200A65F9D /* IntervalSvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalSvc.h; sourceTree = "<group>"; };
 		FAAA85C91A7578C400A65F9D /* IntervalSvcCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalSvcCache.h; sourceTree = "<group>"; };
 		FAAA85CA1A7578C400A65F9D /* IntervalSvcCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalSvcCache.m; sourceTree = "<group>"; };
@@ -238,10 +238,10 @@
 		FAAA85BE1A756F3A00A65F9D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FAAA85C11A756F7D00A65F9D /* Workout.h */,
-				FAAA85C21A756F7D00A65F9D /* Workout.m */,
-				FAAA85C41A756F9200A65F9D /* Interval.h */,
-				FAAA85C51A756F9200A65F9D /* Interval.m */,
+				FAAA85C11A756F7D00A65F9D /* WorkoutModel.h */,
+				FAAA85C21A756F7D00A65F9D /* WorkoutModel.m */,
+				FAAA85C41A756F9200A65F9D /* IntervalModel.h */,
+				FAAA85C51A756F9200A65F9D /* IntervalModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -391,8 +391,8 @@
 				7470D77D1A72E440006C462E /* AppDelegate.m in Sources */,
 				7470D7A01A72E4DB006C462E /* MainViewController.m in Sources */,
 				FAFE7AAA1A91907B0079272E /* PerformWorkoutViewController.m in Sources */,
-				FAAA85C61A756F9200A65F9D /* Interval.m in Sources */,
-				FAAA85C31A756F7D00A65F9D /* Workout.m in Sources */,
+				FAAA85C61A756F9200A65F9D /* IntervalModel.m in Sources */,
+				FAAA85C31A756F7D00A65F9D /* WorkoutModel.m in Sources */,
 				FAFE7AA81A91907B0079272E /* IntervalPickerViewController.m in Sources */,
 				FA527FEE1A9A4B9800F94503 /* CoreDataManager.m in Sources */,
 				FAAA85D31A75890100A65F9D /* CreateWorkoutViewController.m in Sources */,

@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "IntervalPickerViewController.h"
-#import "Workout.h"
+#import "WorkoutModel.h"
 
 @protocol WorkoutCreatedDelegate <NSObject>
 
 @required
-- (void) workoutCreated:(Workout *) workout;
+- (void) workoutCreated:(WorkoutModel *) workout;
 
 @end
 

@@ -7,8 +7,8 @@
 //
 
 #import "MainViewController.h"
-#import "Interval.h"
-#import "Workout.h"
+#import "IntervalModel.h"
+#import "WorkoutModel.h"
 #import "WorkoutsTableViewController.h"
 
 @interface MainViewController ()

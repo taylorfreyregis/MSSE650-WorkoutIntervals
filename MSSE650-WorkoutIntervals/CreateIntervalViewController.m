@@ -216,7 +216,7 @@ UIGestureRecognizer *tapper;
         + (self.secondsStepper.value);
         
         // Create Interval
-        Interval *interval = [[Interval alloc] initWithName:self.intervalNameTextField.text andDuration:duration];
+        IntervalModel *interval = [[IntervalModel alloc] initWithName:self.intervalNameTextField.text andDuration:duration];
         
         // Save Interval
         [[IntervalSvcCoreData intervalSvcSingleton] createInterval:interval];

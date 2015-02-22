@@ -57,7 +57,7 @@ NSMutableArray *intervals;
 
 # pragma mark IntervalSvc Implementation
 
-- (Interval *) createInterval: (Interval *)interval {
+- (IntervalModel *) createInterval: (IntervalModel *)interval {
     
     [intervals addObject:interval];
     [self writeArchive];
@@ -69,7 +69,7 @@ NSMutableArray *intervals;
     return intervals;
 }
 
-- (Interval *) updateInterval: (Interval *)interval {
+- (IntervalModel *) updateInterval: (IntervalModel *)interval {
     
     int location = (int)[intervals indexOfObject:interval];
     
@@ -78,7 +78,7 @@ NSMutableArray *intervals;
     return interval;
 }
 
-- (Interval *) deleteInterval: (Interval *)interval {
+- (IntervalModel *) deleteInterval: (IntervalModel *)interval {
     
     [intervals removeObject:interval];
     [self writeArchive];

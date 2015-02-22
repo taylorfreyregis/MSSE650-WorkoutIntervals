@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Taylor Frey. All rights reserved.
 //
 
-#import "Interval.h"
+#import "IntervalModel.h"
 
 static NSString *const IDENTITY = @"identity";
 static NSString *const NAME = @"name";
 static NSString *const DURATION = @"duration";
 
-@implementation Interval
+@implementation IntervalModel
 
 # pragma mark - Initialization
 

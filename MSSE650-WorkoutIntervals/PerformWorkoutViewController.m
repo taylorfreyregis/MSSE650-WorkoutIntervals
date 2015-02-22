@@ -8,7 +8,7 @@
 
 #import "PerformWorkoutViewController.h"
 #import "Utilities.h"
-#import "Interval.h"
+#import "IntervalModel.h"
 
 @interface PerformWorkoutViewController ()
 
@@ -66,7 +66,7 @@ int timeElapsed;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    Interval *interval = [self.workout.intervals objectAtIndex:indexPath.row];
+    IntervalModel *interval = [self.workout.intervals objectAtIndex:indexPath.row];
     cell.textLabel.text = [interval name];
     return cell;
 }

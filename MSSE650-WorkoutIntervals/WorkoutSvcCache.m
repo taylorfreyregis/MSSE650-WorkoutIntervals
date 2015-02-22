@@ -36,7 +36,7 @@ NSMutableArray *workouts;
     return nil;
 }
 
-- (Workout *) createWorkout: (Workout *)workout {
+- (WorkoutModel *) createWorkout: (WorkoutModel *)workout {
     
     [workouts addObject:workout];
     return workout;
@@ -46,13 +46,13 @@ NSMutableArray *workouts;
     return workouts;
 }
 
-- (Workout *) updateWorkout: (Workout *)workout {
+- (WorkoutModel *) updateWorkout: (WorkoutModel *)workout {
     
     //TODO Figure out how to update.
     return workout;
 }
 
-- (Workout *) deleteWorkout: (Workout *)workout {
+- (WorkoutModel *) deleteWorkout: (WorkoutModel *)workout {
     
     [workouts removeObject:workout];
     return workout;
@@ -69,19 +69,19 @@ NSMutableArray *workouts;
     NSArray *fourthWorkoutIntervals = [[NSArray alloc] initWithObjects:intervals[3], intervals[1], nil];
     NSArray *fifthWorkoutIntervals = [[NSArray alloc] initWithObjects:intervals[3], intervals[1], intervals[2], intervals[1], nil];
     
-    Workout *first = [[Workout alloc]initWithName:@"60 On / 90 Off" andIntervals:firstWorkoutIntervals];
+    WorkoutModel *first = [[WorkoutModel alloc]initWithName:@"60 On / 90 Off" andIntervals:firstWorkoutIntervals];
     [self createWorkout:first];
     
-    Workout *second = [[Workout alloc]initWithName:@"90 On / 90 Off" andIntervals:secondWorkoutIntervals];
+    WorkoutModel *second = [[WorkoutModel alloc]initWithName:@"90 On / 90 Off" andIntervals:secondWorkoutIntervals];
     [self createWorkout:second];
     
-    Workout *third = [[Workout alloc]initWithName:@"3 On / 90 Off" andIntervals:thirdWorkoutIntervals];
+    WorkoutModel *third = [[WorkoutModel alloc]initWithName:@"3 On / 90 Off" andIntervals:thirdWorkoutIntervals];
     [self createWorkout:third];
     
-    Workout *fourth = [[Workout alloc]initWithName:@"5 On / 90 Off" andIntervals:fourthWorkoutIntervals];
+    WorkoutModel *fourth = [[WorkoutModel alloc]initWithName:@"5 On / 90 Off" andIntervals:fourthWorkoutIntervals];
     [self createWorkout:fourth];
     
-    Workout *fifth = [[Workout alloc]initWithName:@"5 On / 90 Off / 3 On / 90 Off" andIntervals:fifthWorkoutIntervals];
+    WorkoutModel *fifth = [[WorkoutModel alloc]initWithName:@"5 On / 90 Off / 3 On / 90 Off" andIntervals:fifthWorkoutIntervals];
     [self createWorkout:fifth];
     
 }

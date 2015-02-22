@@ -35,7 +35,7 @@ NSMutableArray *workouts;
 
 #pragma IntervalSvc Implementation
 
-- (Workout *) createWorkout: (Workout *)workout {
+- (WorkoutModel *) createWorkout: (WorkoutModel *)workout {
     
     // Create query
     NSString *sqlQuery = [NSString stringWithFormat:@"INSERT INTO Workouts (Name) VALUES (\"%@\")", workout.name];
@@ -58,7 +58,7 @@ NSMutableArray *workouts;
     
     for (int i = 0; i < workout.intervals.count; i++) {
         // Create query
-        NSString *sqlQueryInner = [NSString stringWithFormat:@"INSERT INTO WorkoutIntervals (WorkoutId, IntervalId, IntervalOrder) VALUES (%d, %d, %d)", workout.ident, ((Interval *)workout.intervals[i]).ident, i];
+        NSString *sqlQueryInner = [NSString stringWithFormat:@"INSERT INTO WorkoutIntervals (WorkoutId, IntervalId, IntervalOrder) VALUES (%d, %d, %d)", workout.ident, ((IntervalModel *)workout.intervals[i]).ident, i];
         sqlite3_stmt *statementInner;
         
         // Prepare and execute query
@@ -68,7 +68,7 @@ NSMutableArray *workouts;
             // When done, process the last inserted row.
             if (sqlite3_step(statementInner) == SQLITE_DONE) {
                 int workoutIntervalId = (int)sqlite3_last_insert_rowid([WorkoutDatabaseManager manager].database);
-                NSLog(@"Insert completed for workout: %d interval: %d intervalOrder: %d workoutInterval %d", workout.ident, ((Interval *)workout.intervals[i]).ident, i, workoutIntervalId);
+                NSLog(@"Insert completed for workout: %d interval: %d intervalOrder: %d workoutInterval %d", workout.ident, ((IntervalModel *)workout.intervals[i]).ident, i, workoutIntervalId);
             } else {
                 NSLog(@"Error inserting interval. Error: %s", sqlite3_errmsg([WorkoutDatabaseManager manager].database));
             }
@@ -97,7 +97,7 @@ NSMutableArray *workouts;
             int ident = sqlite3_column_int(statement, 0);
             char *nameChars = (char *) sqlite3_column_text(statement, 1);
             NSString *name = [[NSString alloc] initWithUTF8String:nameChars];
-            Workout *workout = [[Workout alloc] initWithId:ident andName:name];
+            WorkoutModel *workout = [[WorkoutModel alloc] initWithId:ident andName:name];
             [workouts addObject:workout];
             
             NSLog(@"Retrieved workout with id: %d", workout.ident);
@@ -107,14 +107,14 @@ NSMutableArray *workouts;
         NSLog(@"Error retrieving intervals. Error: %s", sqlite3_errmsg([WorkoutDatabaseManager manager].database));
     }
     
-    for (Workout *workout in workouts) {
+    for (WorkoutModel *workout in workouts) {
         [self retrieveIntervalsForWorkout:workout];
     }
     
     return workouts;
 }
 
-- (Workout *) retrieveIntervalsForWorkout: (Workout *) workout {
+- (WorkoutModel *) retrieveIntervalsForWorkout: (WorkoutModel *) workout {
     
     NSMutableArray *intervalIds;
     // Create Query
@@ -145,7 +145,7 @@ NSMutableArray *workouts;
     return workout;
 }
 
-- (Workout *) updateWorkout: (Workout *)workout {
+- (WorkoutModel *) updateWorkout: (WorkoutModel *)workout {
     
 //    // Create query
 //    NSString *sqlQuery = [NSString stringWithFormat:@"UPDATE Intervals SET Interval.Name = \"%@\", Interval.Duration = %d WHERE Interval.Id = %d;", interval.name, interval.duration, interval.ident];
@@ -166,7 +166,7 @@ NSMutableArray *workouts;
     return workout;
 }
 
-- (Workout *) deleteWorkout: (Workout *)workout {
+- (WorkoutModel *) deleteWorkout: (WorkoutModel *)workout {
     
     // Create query
 //    NSString *sqlQuery = [NSString stringWithFormat:@"DELETE FROM Intervals WHERE Interval.Id = %d;", interval.ident];

@@ -7,8 +7,8 @@
 //
 
 #import "CreateWorkoutViewController.h"
-#import "Workout.h"
-#import "Interval.h"
+#import "WorkoutModel.h"
+#import "IntervalModel.h"
 #import "Utilities.h"
 #import "WorkoutDatabaseSvc.h"
 
@@ -20,7 +20,7 @@
 
 @implementation CreateWorkoutViewController
 
-Workout *workout;
+WorkoutModel *workout;
 
 UIAlertController *intervalPickerAlert;
 
@@ -44,7 +44,7 @@ UIGestureRecognizer *tapper;
 
 - (void) initialize {
     
-    workout = [[Workout alloc] init];
+    workout = [[WorkoutModel alloc] init];
     [self.intervalTableView setDelegate:self];
     [self.intervalTableView setDataSource:self];
     [self updateData];
@@ -115,14 +115,14 @@ UIGestureRecognizer *tapper;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    Interval *interval = [workout.intervals objectAtIndex:indexPath.row];
+    IntervalModel *interval = [workout.intervals objectAtIndex:indexPath.row];
     cell.textLabel.text = [interval name];
     return cell;
 }
 
 # pragma mark - IntervalSelectedDelegate
 
-- (void) selectedInterval:(Interval *) interval {
+- (void) selectedInterval:(IntervalModel *) interval {
     
     [workout addInterval:interval];
     [self updateData];

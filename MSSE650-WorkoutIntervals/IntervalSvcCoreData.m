@@ -38,7 +38,7 @@ NSMutableArray *intervals;
 
 #pragma mark - Interval Service Implementation
 
-- (Interval *) createInterval: (Interval *)interval {
+- (IntervalModel *) createInterval: (IntervalModel *)interval {
     
     NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:INTERVAL inManagedObjectContext:[CoreDataManager manager].managedObjectContext];
     [managedObject setValue:interval.name forKey:NAME];
@@ -60,7 +60,7 @@ NSMutableArray *intervals;
     NSError *error;
     NSArray *fetchedObjects = [[CoreDataManager manager].managedObjectContext executeFetchRequest:fetchRequest error:&error];
     for (NSManagedObject *managedObject in fetchedObjects) {
-        Interval *interval = [[Interval alloc] initWithName:[managedObject valueForKey:NAME]  andDuration:[[managedObject valueForKey:DURATION] intValue]];
+        IntervalModel *interval = [[IntervalModel alloc] initWithName:[managedObject valueForKey:NAME]  andDuration:[[managedObject valueForKey:DURATION] intValue]];
         NSLog(@"Interval retrieved: %@", interval.description);
         [intervals addObject:interval];
     }
@@ -68,12 +68,12 @@ NSMutableArray *intervals;
     return intervals;
 }
 
-- (Interval *) updateInterval: (Interval *)interval {
+- (IntervalModel *) updateInterval: (IntervalModel *)interval {
     
     return interval;
 }
 
-- (Interval *) deleteInterval: (Interval *)interval {
+- (IntervalModel *) deleteInterval: (IntervalModel *)interval {
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:INTERVAL inManagedObjectContext:[CoreDataManager manager].managedObjectContext];

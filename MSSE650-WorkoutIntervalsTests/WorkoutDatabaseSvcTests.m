@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "Workout.h"
+#import "WorkoutModel.h"
 #import "WorkoutDatabaseSvc.h"
 
 @interface WorkoutDatabaseSvcTests : XCTestCase
@@ -18,21 +18,21 @@
 @implementation WorkoutDatabaseSvcTests
 
 NSMutableArray *intervals;
-Workout *result;
+WorkoutModel *result;
 
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
     intervals = [[NSMutableArray alloc] initWithObjects:
-                 [[Interval alloc] initWithName:@"First" andDuration:60],
-                 [[Interval alloc] initWithName:@"SECOND" andDuration:60],
-                 [[Interval alloc] initWithName:@"Third" andDuration:60],
-                 [[Interval alloc] initWithName:@"Fourth" andDuration:60],
-                 [[Interval alloc] initWithName:@"Fifth" andDuration:60],
-                 [[Interval alloc] initWithName:@"6th" andDuration:60],
-                 [[Interval alloc] initWithName:@"Seventh" andDuration:60],
-                 [[Interval alloc] initWithName:@"EIGTH" andDuration:60],
+                 [[IntervalModel alloc] initWithName:@"First" andDuration:60],
+                 [[IntervalModel alloc] initWithName:@"SECOND" andDuration:60],
+                 [[IntervalModel alloc] initWithName:@"Third" andDuration:60],
+                 [[IntervalModel alloc] initWithName:@"Fourth" andDuration:60],
+                 [[IntervalModel alloc] initWithName:@"Fifth" andDuration:60],
+                 [[IntervalModel alloc] initWithName:@"6th" andDuration:60],
+                 [[IntervalModel alloc] initWithName:@"Seventh" andDuration:60],
+                 [[IntervalModel alloc] initWithName:@"EIGTH" andDuration:60],
                  nil];
 }
 
@@ -43,7 +43,7 @@ Workout *result;
 
 
 - (void) testCreateInterval {
-    Workout *start = [[Workout alloc] initWithName:@"TestWorkout" andIntervals:intervals];
+    WorkoutModel *start = [[WorkoutModel alloc] initWithName:@"TestWorkout" andIntervals:intervals];
     
     result = [[WorkoutDatabaseSvc workoutSvcSingleton] createWorkout:start];
     
@@ -61,7 +61,7 @@ Workout *result;
 
 - (void) testDeleteInterval {
     
-    Workout *start = [[Workout alloc] initWithName:@"TestDelete" andIntervals:intervals];
+    WorkoutModel *start = [[WorkoutModel alloc] initWithName:@"TestDelete" andIntervals:intervals];
     result = [[WorkoutDatabaseSvc workoutSvcSingleton] deleteWorkout:start];
     
     XCTAssert(result.ident == start.ident);
@@ -70,7 +70,7 @@ Workout *result;
 
 - (void) testUpdateInterval {
     
-    Workout *updateMe = [[Workout alloc] initWithName:@"UpdateWorkout" andIntervals:intervals];
+    WorkoutModel *updateMe = [[WorkoutModel alloc] initWithName:@"UpdateWorkout" andIntervals:intervals];
     
     
     result = [[WorkoutDatabaseSvc workoutSvcSingleton] createWorkout:updateMe];

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-#import "Interval.h"
+#import "IntervalModel.h"
 #import "IntervalSvcArchive.h"
 
 @interface IntervalsSvcArchiveTests : XCTestCase
@@ -33,8 +33,8 @@
     
     int initialCount = (int)[[[IntervalSvcArchive intervalSvcSingleton] retrieveAllIntervals] count];
     
-    Interval *intervalOne = [[Interval alloc] initWithName:@"Testing Interval 1" andDuration:180];
-    Interval *intervalTwo = [[Interval alloc] initWithName:@"Testing Interval 2" andDuration:360];
+    IntervalModel *intervalOne = [[IntervalModel alloc] initWithName:@"Testing Interval 1" andDuration:180];
+    IntervalModel *intervalTwo = [[IntervalModel alloc] initWithName:@"Testing Interval 2" andDuration:360];
     
     [[IntervalSvcArchive intervalSvcSingleton] createInterval:intervalOne];
     
