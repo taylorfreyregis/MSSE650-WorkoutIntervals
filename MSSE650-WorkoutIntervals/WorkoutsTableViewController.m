@@ -9,7 +9,6 @@
 #import "WorkoutsTableViewController.h"
 #import "PerformWorkoutViewController.h"
 #import "Workout.h"
-//#import "WorkoutSvcArchive.h"
 #import "WorkoutDatabaseSvc.h"
 
 @interface WorkoutsTableViewController ()
@@ -27,6 +26,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -69,9 +69,9 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"WorkoutsTableToPerformWorkout" sender:self];
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    [self performSegueWithIdentifier:@"WorkoutsTableToPerformWorkout" sender:self];
+//}
 
 /*
 // Override to support conditional editing of the table view.
@@ -115,13 +115,15 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
+    NSString *identifier = [segue identifier];
+    
     // Verify the segue via the identifier
-    if ([[segue identifier] isEqualToString:@"WorkoutsToCreateWorkout"]) {
+    if ([identifier isEqualToString:@"WorkoutsToCreateWorkout"]) {
         
         CreateWorkoutViewController *destination = segue.destinationViewController;
         
         [destination setDelegate: self];
-    } else if ([[segue identifier] isEqualToString:@"WorkoutsTableToPerformWorkout"]) {
+    } else if ([identifier isEqualToString:@"WorkoutsToPerformWorkout"]) {
         PerformWorkoutViewController *destination = segue.destinationViewController;
         
         Workout *workout = [_workouts objectAtIndex:[[self tableView] indexPathForSelectedRow].row];

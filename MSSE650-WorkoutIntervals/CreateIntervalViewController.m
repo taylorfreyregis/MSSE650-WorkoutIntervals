@@ -7,8 +7,7 @@
 //
 
 #import "CreateIntervalViewController.h"
-//#import "IntervalSvcArchive.h"
-#import "IntervalDatabaseSvc.h"
+#import "IntervalSvcCoreData.h"
 #import "Constants.h"
 
 @interface CreateIntervalViewController ()
@@ -220,7 +219,7 @@ UIGestureRecognizer *tapper;
         Interval *interval = [[Interval alloc] initWithName:self.intervalNameTextField.text andDuration:duration];
         
         // Save Interval
-        [[IntervalDatabaseSvc intervalSvcSingleton] createInterval:interval];
+        [[IntervalSvcCoreData intervalSvcSingleton] createInterval:interval];
     }
     
     [self.navigationController popViewControllerAnimated:true];

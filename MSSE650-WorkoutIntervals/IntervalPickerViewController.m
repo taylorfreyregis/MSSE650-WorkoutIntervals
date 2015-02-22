@@ -7,7 +7,7 @@
 //
 
 #import "IntervalPickerViewController.h"
-#import "IntervalDatabaseSvc.h"
+#import "IntervalSvcCoreData.h"
 
 @interface IntervalPickerViewController ()
 
@@ -21,7 +21,7 @@ NSMutableArray *intervals;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    intervals = [[IntervalDatabaseSvc intervalSvcSingleton] retrieveAllIntervals];
+    intervals = [[IntervalSvcCoreData intervalSvcSingleton] retrieveAllIntervals];
 }
 
 - (void)didReceiveMemoryWarning {

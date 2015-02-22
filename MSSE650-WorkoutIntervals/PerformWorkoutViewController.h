@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Workout.h"
 
-@interface PerformWorkoutViewController : UIViewController
+@interface PerformWorkoutViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *workoutTitle;
 

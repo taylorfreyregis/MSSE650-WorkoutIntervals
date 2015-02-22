@@ -27,6 +27,8 @@ int timeElapsed;
     
     self.title = self.workout.name;
     
+    [self.intervalsTableView setDataSource:self];
+    [self.intervalsTableView setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning {

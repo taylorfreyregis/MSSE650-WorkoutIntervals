@@ -12,4 +12,11 @@
 #define NUMERIC_VALUES @"0123456789"
 #define DATABASE_NAME @"WorkoutDatabase"
 
+#define INTERVAL @"Interval"
+#define WORKOUT @"Workout"
+#define IDENT @"ident"
+#define NAME @"name"
+#define DURATION @"duration"
+
+
 #endif
