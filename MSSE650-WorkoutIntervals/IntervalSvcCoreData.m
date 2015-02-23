@@ -14,7 +14,6 @@
 
 NSMutableArray *intervals;
 
-
 # pragma mark Singleton Methods
 
 + (id) intervalSvcSingleton {
@@ -38,11 +37,7 @@ NSMutableArray *intervals;
 
 #pragma mark - Interval Service Implementation
 
-- (IntervalModel *) createInterval: (IntervalModel *)interval {
-    
-    NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:INTERVAL inManagedObjectContext:[CoreDataManager manager].managedObjectContext];
-    [managedObject setValue:interval.name forKey:NAME];
-    [managedObject setValue:[NSNumber numberWithInt:interval.duration] forKey:DURATION];
+- (Interval *) createInterval: (Interval *)interval {
     
     NSError *error;
     if (![[CoreDataManager manager].managedObjectContext save:&error]) {
@@ -57,36 +52,39 @@ NSMutableArray *intervals;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:INTERVAL inManagedObjectContext:[CoreDataManager manager].managedObjectContext];
     [fetchRequest setEntity:entity];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:DURATION ascending:true];
+    [fetchRequest setSortDescriptors:@[sortDescriptor]];
     NSError *error;
     NSArray *fetchedObjects = [[CoreDataManager manager].managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    for (NSManagedObject *managedObject in fetchedObjects) {
-        IntervalModel *interval = [[IntervalModel alloc] initWithName:[managedObject valueForKey:NAME]  andDuration:[[managedObject valueForKey:DURATION] intValue]];
-        NSLog(@"Interval retrieved: %@", interval.description);
-        [intervals addObject:interval];
+    if (error != nil) {
+        NSLog(@"Error fetching all Intervals, %@", [error localizedDescription]);
     }
     
-    return intervals;
+    NSMutableArray *mutableIntervals = [[NSMutableArray alloc] initWithArray:fetchedObjects];
+    
+    return mutableIntervals;
 }
 
-- (IntervalModel *) updateInterval: (IntervalModel *)interval {
+- (Interval *) updateInterval: (Interval *)interval {
+    
+    NSError *error;
+    if (![[CoreDataManager manager].managedObjectContext save:&error]) {
+        NSLog(@"Update Interval error: %@", [error localizedDescription]);
+    }
     
     return interval;
 }
 
-- (IntervalModel *) deleteInterval: (IntervalModel *)interval {
+- (Interval *) deleteInterval: (Interval *)interval {
     
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:INTERVAL inManagedObjectContext:[CoreDataManager manager].managedObjectContext];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@ AND duration = %d", interval.name, interval.duration];
-    [fetchRequest setPredicate:predicate];
-    [fetchRequest setEntity:entity];
-    NSError *error;
-    NSArray *fetchedObjects = [[CoreDataManager manager].managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    [[CoreDataManager manager].managedObjectContext deleteObject:interval];
     
-    if ([fetchedObjects count] == 1) {
-        NSManagedObject *managedObject = [fetchedObjects objectAtIndex:0];
-        [[CoreDataManager manager].managedObjectContext deleteObject:managedObject];
-    }
+    return interval;
+}
+
++ (Interval *) createManagedInterval {
+    
+    Interval *interval = [NSEntityDescription insertNewObjectForEntityForName:INTERVAL inManagedObjectContext:[CoreDataManager manager].managedObjectContext];
     
     return interval;
 }

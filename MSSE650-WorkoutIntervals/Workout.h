@@ -15,14 +15,20 @@
 
 @property (nonatomic, retain) NSNumber * ident;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet *intervals;
+@property (nonatomic, retain) NSNumber * duration;
+@property (nonatomic, retain) NSOrderedSet *intervals;
 @end
 
 @interface Workout (CoreDataGeneratedAccessors)
 
+- (void)insertObject:(Interval *)value inIntervalsAtIndex:(NSUInteger)idx;
+- (void)removeObjectFromIntervalsAtIndex:(NSUInteger)idx;
+- (void)insertIntervals:(NSArray *)value atIndexes:(NSIndexSet *)indexes;
+- (void)removeIntervalsAtIndexes:(NSIndexSet *)indexes;
+- (void)replaceObjectInIntervalsAtIndex:(NSUInteger)idx withObject:(Interval *)value;
+- (void)replaceIntervalsAtIndexes:(NSIndexSet *)indexes withIntervals:(NSArray *)values;
 - (void)addIntervalsObject:(Interval *)value;
 - (void)removeIntervalsObject:(Interval *)value;
-- (void)addIntervals:(NSSet *)values;
-- (void)removeIntervals:(NSSet *)values;
-
+- (void)addIntervals:(NSOrderedSet *)values;
+- (void)removeIntervals:(NSOrderedSet *)values;
 @end

@@ -18,7 +18,8 @@
 		74DEEB861A8889620018FDC3 /* WorkoutsSvcArchiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DEEB851A8889620018FDC3 /* WorkoutsSvcArchiveTests.m */; };
 		FA527FEE1A9A4B9800F94503 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA527FED1A9A4B9800F94503 /* CoreDataManager.m */; };
 		FA527FF11A9A8EB100F94503 /* Interval.m in Sources */ = {isa = PBXBuildFile; fileRef = FA527FF01A9A8EB100F94503 /* Interval.m */; };
-		FA527FF41A9A8EB200F94503 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = FA527FF31A9A8EB200F94503 /* Workout.m */; };
+		FA527FF91A9A9CCD00F94503 /* WorkoutSvcCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA527FF81A9A9CCD00F94503 /* WorkoutSvcCoreData.m */; };
+		FA527FFC1A9AA3FC00F94503 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = FA527FFB1A9AA3FC00F94503 /* Workout.m */; };
 		FA7C98321A99355200E63563 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7C98311A99355200E63563 /* CoreData.framework */; };
 		FA7C98351A99AC1E00E63563 /* IntervalSvcCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7C98341A99AC1E00E63563 /* IntervalSvcCoreData.m */; };
 		FA7C98391A99B06D00E63563 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA7C98371A99B06D00E63563 /* Model.xcdatamodeld */; };
@@ -75,8 +76,12 @@
 		FA527FED1A9A4B9800F94503 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		FA527FEF1A9A8EB100F94503 /* Interval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interval.h; sourceTree = "<group>"; };
 		FA527FF01A9A8EB100F94503 /* Interval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interval.m; sourceTree = "<group>"; };
-		FA527FF21A9A8EB200F94503 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
-		FA527FF31A9A8EB200F94503 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
+		FA527FF51A9A955500F94503 /* IntervalSvcProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalSvcProtocol.h; sourceTree = "<group>"; };
+		FA527FF61A9A95A600F94503 /* WorkoutSvcProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutSvcProtocol.h; sourceTree = "<group>"; };
+		FA527FF71A9A9CCD00F94503 /* WorkoutSvcCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutSvcCoreData.h; sourceTree = "<group>"; };
+		FA527FF81A9A9CCD00F94503 /* WorkoutSvcCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutSvcCoreData.m; sourceTree = "<group>"; };
+		FA527FFA1A9AA3FC00F94503 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
+		FA527FFB1A9AA3FC00F94503 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
 		FA7C98311A99355200E63563 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FA7C98331A99AC1E00E63563 /* IntervalSvcCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalSvcCoreData.h; sourceTree = "<group>"; };
 		FA7C98341A99AC1E00E63563 /* IntervalSvcCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalSvcCoreData.m; sourceTree = "<group>"; };
@@ -215,12 +220,18 @@
 			isa = PBXGroup;
 			children = (
 				FA7C98371A99B06D00E63563 /* Model.xcdatamodeld */,
-				FA527FF21A9A8EB200F94503 /* Workout.h */,
-				FA527FF31A9A8EB200F94503 /* Workout.m */,
 				FA527FEF1A9A8EB100F94503 /* Interval.h */,
 				FA527FF01A9A8EB100F94503 /* Interval.m */,
+				FA527FFA1A9AA3FC00F94503 /* Workout.h */,
+				FA527FFB1A9AA3FC00F94503 /* Workout.m */,
 				FA527FEC1A9A4B9800F94503 /* CoreDataManager.h */,
 				FA527FED1A9A4B9800F94503 /* CoreDataManager.m */,
+				FA527FF51A9A955500F94503 /* IntervalSvcProtocol.h */,
+				FA7C98331A99AC1E00E63563 /* IntervalSvcCoreData.h */,
+				FA7C98341A99AC1E00E63563 /* IntervalSvcCoreData.m */,
+				FA527FF61A9A95A600F94503 /* WorkoutSvcProtocol.h */,
+				FA527FF71A9A9CCD00F94503 /* WorkoutSvcCoreData.h */,
+				FA527FF81A9A9CCD00F94503 /* WorkoutSvcCoreData.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -273,8 +284,6 @@
 				FAFE7A9A1A916D6B0079272E /* IntervalDatabaseSvc.m */,
 				FAFE7AAF1A9197B90079272E /* WorkoutDatabaseSvc.h */,
 				FAFE7AB01A9197B90079272E /* WorkoutDatabaseSvc.m */,
-				FA7C98331A99AC1E00E63563 /* IntervalSvcCoreData.h */,
-				FA7C98341A99AC1E00E63563 /* IntervalSvcCoreData.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -398,7 +407,6 @@
 				FAAA85CB1A7578C400A65F9D /* IntervalSvcCache.m in Sources */,
 				FAFE7A9B1A916D6B0079272E /* IntervalDatabaseSvc.m in Sources */,
 				FA7C98391A99B06D00E63563 /* Model.xcdatamodeld in Sources */,
-				FA527FF41A9A8EB200F94503 /* Workout.m in Sources */,
 				FAAA85CF1A7584E300A65F9D /* WorkoutSvcCache.m in Sources */,
 				7470D77D1A72E440006C462E /* AppDelegate.m in Sources */,
 				7470D7A01A72E4DB006C462E /* MainViewController.m in Sources */,
@@ -406,12 +414,14 @@
 				FAAA85C61A756F9200A65F9D /* IntervalModel.m in Sources */,
 				FAAA85C31A756F7D00A65F9D /* WorkoutModel.m in Sources */,
 				FAFE7AA81A91907B0079272E /* IntervalPickerViewController.m in Sources */,
+				FA527FF91A9A9CCD00F94503 /* WorkoutSvcCoreData.m in Sources */,
 				FA527FEE1A9A4B9800F94503 /* CoreDataManager.m in Sources */,
 				FAAA85D31A75890100A65F9D /* CreateWorkoutViewController.m in Sources */,
 				FAFE7A961A9158800079272E /* WorkoutDatabaseManager.m in Sources */,
 				7470D77A1A72E440006C462E /* main.m in Sources */,
 				FA7C98351A99AC1E00E63563 /* IntervalSvcCoreData.m in Sources */,
 				74DEEB7B1A886BD40018FDC3 /* Utilities.m in Sources */,
+				FA527FFC1A9AA3FC00F94503 /* Workout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

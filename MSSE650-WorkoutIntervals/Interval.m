@@ -7,7 +7,7 @@
 //
 
 #import "Interval.h"
-
+#import "Constants.h"
 
 @implementation Interval
 

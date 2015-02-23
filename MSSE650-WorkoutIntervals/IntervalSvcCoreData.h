@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "IntervalSvc.h"
+#import "IntervalSvcProtocol.h"
 
-@interface IntervalSvcCoreData : NSObject <IntervalSvc>
+@interface IntervalSvcCoreData : NSObject <IntervalSvcProtocol>
+
++ (Interval *) createManagedInterval;
 
 @end

@@ -8,8 +8,8 @@
 
 #import "WorkoutsTableViewController.h"
 #import "PerformWorkoutViewController.h"
-#import "WorkoutModel.h"
-#import "WorkoutDatabaseSvc.h"
+#import "Workout.h"
+#import "WorkoutSvcCoreData.h"
 
 @interface WorkoutsTableViewController ()
 
@@ -31,7 +31,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = false;
-    _workouts = [NSMutableArray arrayWithArray:[[WorkoutDatabaseSvc workoutSvcSingleton] retrieveAllWorkouts]];
+    _workouts = [NSMutableArray arrayWithArray:[[WorkoutSvcCoreData workoutSvcSingleton] retrieveAllWorkouts]];
     [self.tableView reloadData];
 }
 
@@ -63,7 +63,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    WorkoutModel *workout = [_workouts objectAtIndex:indexPath.row];
+    Workout *workout = [_workouts objectAtIndex:indexPath.row];
     cell.textLabel.text = workout.name;
 
     return cell;
@@ -126,7 +126,7 @@
     } else if ([identifier isEqualToString:@"WorkoutsToPerformWorkout"]) {
         PerformWorkoutViewController *destination = segue.destinationViewController;
         
-        WorkoutModel *workout = [_workouts objectAtIndex:[[self tableView] indexPathForSelectedRow].row];
+        Workout *workout = [_workouts objectAtIndex:[[self tableView] indexPathForSelectedRow].row];
         
         destination.workout = workout;
     }
@@ -140,7 +140,7 @@
 
 # pragma mark - WorkoutCreatedDelegate
 
-- (void) workoutCreated:(WorkoutModel *) workout {
+- (void) workoutCreated:(Workout *) workout {
     
     // No longer necessary now that we are pulling out of a central repo? aka SQL
     [self updateData];

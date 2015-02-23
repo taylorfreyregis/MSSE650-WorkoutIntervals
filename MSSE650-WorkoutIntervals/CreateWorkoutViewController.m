@@ -7,10 +7,10 @@
 //
 
 #import "CreateWorkoutViewController.h"
-#import "WorkoutModel.h"
-#import "IntervalModel.h"
+#import "Workout.h"
+#import "Interval.h"
 #import "Utilities.h"
-#import "WorkoutDatabaseSvc.h"
+#import "WorkoutSvcCoreData.h"
 
 #import "IntervalPickerViewController.h"
 
@@ -20,7 +20,7 @@
 
 @implementation CreateWorkoutViewController
 
-WorkoutModel *workout;
+Workout *workout;
 
 UIAlertController *intervalPickerAlert;
 
@@ -44,7 +44,7 @@ UIGestureRecognizer *tapper;
 
 - (void) initialize {
     
-    workout = [[WorkoutModel alloc] init];
+    workout = [WorkoutSvcCoreData createManagedWorkout];
     [self.intervalTableView setDelegate:self];
     [self.intervalTableView setDataSource:self];
     [self updateData];
@@ -86,7 +86,7 @@ UIGestureRecognizer *tapper;
 - (IBAction)saveWorkoutButton:(id)sender {
     
     if ([self validate]) {
-        [[WorkoutDatabaseSvc workoutSvcSingleton] createWorkout:workout];
+        [[WorkoutSvcCoreData workoutSvcSingleton] createWorkout:workout];
         
         if ([self delegate] != nil) {
             [[self delegate] workoutCreated:workout];
@@ -115,16 +115,16 @@ UIGestureRecognizer *tapper;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    IntervalModel *interval = [workout.intervals objectAtIndex:indexPath.row];
+    Interval *interval = [workout.intervals objectAtIndex:indexPath.row];
     cell.textLabel.text = [interval name];
     return cell;
 }
 
 # pragma mark - IntervalSelectedDelegate
 
-- (void) selectedInterval:(IntervalModel *) interval {
+- (void) selectedInterval:(Interval *) interval {
     
-    [workout addInterval:interval];
+    [workout addIntervalsObject:interval];
     [self updateData];
 }
 

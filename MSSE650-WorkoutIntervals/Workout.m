@@ -14,6 +14,7 @@
 
 @dynamic ident;
 @dynamic name;
+@dynamic duration;
 @dynamic intervals;
 
 @end
