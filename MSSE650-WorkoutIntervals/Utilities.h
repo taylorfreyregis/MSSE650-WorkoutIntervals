@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Workout.h"
+#import "Interval.h"
 
 @interface Utilities : NSObject
 
 + (NSString *)getHumanReadableDuration:(int) seconds;
++ (int)getDurationForWorkout:(Workout *)workout;
 
 @end

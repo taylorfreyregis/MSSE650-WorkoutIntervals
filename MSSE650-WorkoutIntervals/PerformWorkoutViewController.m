@@ -92,7 +92,7 @@ int timeElapsed;
 
 -(void) startTimer {
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateCounters:) userInfo:nil repeats:false];
-    timeRemaining = (int)self.workout.duration;
+    timeRemaining = [Utilities getDurationForWorkout:self.workout];
     timeElapsed = 0;
 //    timeStarted = [NSDate date];
 }

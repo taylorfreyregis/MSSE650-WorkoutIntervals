@@ -20,6 +20,8 @@
 		FA527FF11A9A8EB100F94503 /* Interval.m in Sources */ = {isa = PBXBuildFile; fileRef = FA527FF01A9A8EB100F94503 /* Interval.m */; };
 		FA527FF91A9A9CCD00F94503 /* WorkoutSvcCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA527FF81A9A9CCD00F94503 /* WorkoutSvcCoreData.m */; };
 		FA527FFC1A9AA3FC00F94503 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = FA527FFB1A9AA3FC00F94503 /* Workout.m */; };
+		FA527FFE1A9AB92100F94503 /* IntervalCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA527FFD1A9AB92100F94503 /* IntervalCoreDataTests.m */; };
+		FA5280001A9ADE4500F94503 /* WorkoutCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA527FFF1A9ADE4500F94503 /* WorkoutCoreDataTests.m */; };
 		FA7C98321A99355200E63563 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7C98311A99355200E63563 /* CoreData.framework */; };
 		FA7C98351A99AC1E00E63563 /* IntervalSvcCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7C98341A99AC1E00E63563 /* IntervalSvcCoreData.m */; };
 		FA7C98391A99B06D00E63563 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA7C98371A99B06D00E63563 /* Model.xcdatamodeld */; };
@@ -82,6 +84,8 @@
 		FA527FF81A9A9CCD00F94503 /* WorkoutSvcCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutSvcCoreData.m; sourceTree = "<group>"; };
 		FA527FFA1A9AA3FC00F94503 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
 		FA527FFB1A9AA3FC00F94503 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
+		FA527FFD1A9AB92100F94503 /* IntervalCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalCoreDataTests.m; sourceTree = "<group>"; };
+		FA527FFF1A9ADE4500F94503 /* WorkoutCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutCoreDataTests.m; sourceTree = "<group>"; };
 		FA7C98311A99355200E63563 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FA7C98331A99AC1E00E63563 /* IntervalSvcCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalSvcCoreData.h; sourceTree = "<group>"; };
 		FA7C98341A99AC1E00E63563 /* IntervalSvcCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalSvcCoreData.m; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 				74DEEB851A8889620018FDC3 /* WorkoutsSvcArchiveTests.m */,
 				FAFE7AB51A91ADA20079272E /* IntervalDatabaseSvcTests.m */,
 				FAC20B131A91BE71008454AF /* WorkoutDatabaseSvcTests.m */,
+				FA527FFD1A9AB92100F94503 /* IntervalCoreDataTests.m */,
+				FA527FFF1A9ADE4500F94503 /* WorkoutCoreDataTests.m */,
 			);
 			path = "MSSE650-WorkoutIntervalsTests";
 			sourceTree = "<group>";
@@ -431,7 +437,9 @@
 			files = (
 				74DEEB811A8881490018FDC3 /* IntervalsSvcArchiveTests.m in Sources */,
 				74DEEB861A8889620018FDC3 /* WorkoutsSvcArchiveTests.m in Sources */,
+				FA5280001A9ADE4500F94503 /* WorkoutCoreDataTests.m in Sources */,
 				FAFE7AB61A91ADA20079272E /* IntervalDatabaseSvcTests.m in Sources */,
+				FA527FFE1A9AB92100F94503 /* IntervalCoreDataTests.m in Sources */,
 				FAC20B141A91BE71008454AF /* WorkoutDatabaseSvcTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

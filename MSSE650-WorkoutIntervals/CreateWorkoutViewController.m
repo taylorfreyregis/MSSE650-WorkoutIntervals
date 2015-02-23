@@ -132,7 +132,7 @@ UIGestureRecognizer *tapper;
 
 - (void) updateData {
     [self.intervalTableView reloadData];
-    [self.workoutDurationLabel setText:[Utilities getHumanReadableDuration:(int)workout.duration]];
+    [self.workoutDurationLabel setText:[Utilities getHumanReadableDuration:[Utilities getDurationForWorkout:workout]]];
 }
 
 /**
