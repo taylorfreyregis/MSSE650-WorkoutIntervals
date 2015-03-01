@@ -20,6 +20,10 @@
 - (IBAction)pauseContinueButtonAction:(id)sender;
 - (IBAction)finishButtonAction:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *startButtonOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *pauseContinueButtonOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *finishButtonOutlet;
+
 @property (nonatomic) WorkoutModel *workout;
 
 @property (weak, nonatomic) IBOutlet UITableView *intervalsTableView;

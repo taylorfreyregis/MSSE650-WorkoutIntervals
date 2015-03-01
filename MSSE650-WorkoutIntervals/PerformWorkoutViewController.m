@@ -20,12 +20,17 @@ NSDate *timeStarted;
 NSTimer *timer;
 int timeRemaining;
 int timeElapsed;
+bool isRunning;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     self.title = self.workout.name;
+    [self resetTimerViews];
+    
+    self.startButtonOutlet.enabled = true;
+    self.finishButtonOutlet.enabled = false;
     
     [self.intervalsTableView setDataSource:self];
     [self.intervalsTableView setDelegate:self];
@@ -34,6 +39,14 @@ int timeElapsed;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)resetTimerViews {
+    timeElapsed = 0;
+    [self.elapsedTimeLabel setText:[Utilities getHumanReadableDuration:(int)timeElapsed]];
+    
+    timeRemaining = self.workout.duration;
+    [self.remainingTimeLabel setText:[Utilities getHumanReadableDuration:(int)timeRemaining]];
 }
 
 /*
@@ -82,27 +95,44 @@ int timeElapsed;
     [self.remainingTimeLabel setText:[Utilities getHumanReadableDuration:(int)timeRemaining]];
     [self.elapsedTimeLabel setText:[Utilities getHumanReadableDuration:(int)timeElapsed]];
     
+    if (timeRemaining <= 0) {
+        [timer invalidate];
+        
+    }
+    
 }
 
 #pragma mark - IBActions
 
 - (IBAction)startButtonAction:(id)sender {
-    
+    [self startTimer];
+    isRunning = true;
+    self.startButtonOutlet.enabled = false;
+    self.finishButtonOutlet.enabled = true;
+    self.pauseContinueButtonOutlet.titleLabel.text = @"Pause";
 }
 
 -(void) startTimer {
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateCounters:) userInfo:nil repeats:false];
-    timeRemaining = [Utilities getDurationForWorkoutModel:self.workout];
-    timeElapsed = 0;
-//    timeStarted = [NSDate date];
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateCounters:) userInfo:nil repeats:true];
 }
 
 - (IBAction)pauseContinueButtonAction:(id)sender {
-    [timer invalidate];
+    if (isRunning) {
+        isRunning = false;
+        [timer invalidate];
+        self.pauseContinueButtonOutlet.titleLabel.text = @"Continue";
+    } else {
+        isRunning = true;
+        [self startTimer];
+        self.pauseContinueButtonOutlet.titleLabel.text = @"Pause";
+    }
 }
 
 - (IBAction)finishButtonAction:(id)sender {
+    self.startButtonOutlet.enabled = true;
+    self.finishButtonOutlet.enabled = false;
     [timer invalidate];
+    [self resetTimerViews];
 }
 
 @end

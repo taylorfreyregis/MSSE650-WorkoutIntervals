@@ -783,12 +783,18 @@
                                         <exclude reference="YI0-TN-0k7"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="184" width="400" height="616"/>
+                                </variation>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1U-qB-6St">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Start">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="138" width="33" height="38"/>
+                                </variation>
                                 <connections>
                                     <action selector="startButtonAction:" destination="vS1-Mh-FHI" eventType="touchUpInside" id="2H2-Wd-l7H"/>
                                 </connections>
@@ -798,6 +804,9 @@
                                 <state key="normal" title="Continue">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="169" y="146" width="62" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="pauseContinueButtonAction:" destination="vS1-Mh-FHI" eventType="touchUpInside" id="LAQ-hp-nKb"/>
                                 </connections>
@@ -807,6 +816,9 @@
                                 <state key="normal" title="Finish">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="343" y="138" width="41" height="38"/>
+                                </variation>
                                 <connections>
                                     <action selector="finishButtonAction:" destination="vS1-Mh-FHI" eventType="touchUpInside" id="7p6-Cr-wTQ"/>
                                 </connections>
@@ -933,12 +945,21 @@
                                 <include reference="pHU-Hx-n4t"/>
                             </mask>
                         </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="Tf0-io-ZMT"/>
+                                <exclude reference="Uxq-kY-6fF"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="0da-NX-5xD"/>
                     <connections>
                         <outlet property="elapsedTimeLabel" destination="Cny-eN-vUz" id="AYV-87-f3K"/>
+                        <outlet property="finishButtonOutlet" destination="lci-DP-HpP" id="hdv-sg-0rc"/>
                         <outlet property="intervalsTableView" destination="vU9-YA-ZQt" id="tdh-BB-mQQ"/>
+                        <outlet property="pauseContinueButtonOutlet" destination="kPX-ty-MqS" id="MK0-Rk-iUa"/>
                         <outlet property="remainingTimeLabel" destination="V0G-sZ-gcj" id="q0y-TV-8bN"/>
+                        <outlet property="startButtonOutlet" destination="b1U-qB-6St" id="CAs-iO-4ms"/>
                         <outlet property="workoutTitle" destination="0da-NX-5xD" id="mfl-sn-tn8"/>
                     </connections>
                 </viewController>
