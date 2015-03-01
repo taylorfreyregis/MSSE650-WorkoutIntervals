@@ -25,6 +25,17 @@
     return [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
 }
 
++ (int) getDurationForWorkoutModel: (WorkoutModel *) workout {
+    
+    int duration = 0;
+    
+    for (IntervalModel *interval in workout.intervals) {
+        duration += (int)interval.duration;
+    }
+    
+    return duration;
+}
+
 + (int) getDurationForWorkout: (Workout *) workout {
     
     int duration = 0;

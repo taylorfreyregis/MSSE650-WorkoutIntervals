@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Interval.h"
+#import "IntervalModel.h"
 
 @protocol IntervalSelectedDelegate <NSObject>
 
 @required
-- (void) selectedInterval:(Interval *) interval;
+- (void) selectedInterval:(IntervalModel *) interval;
 
 @end
 

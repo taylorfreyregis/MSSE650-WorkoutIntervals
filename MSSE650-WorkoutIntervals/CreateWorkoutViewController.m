@@ -7,10 +7,10 @@
 //
 
 #import "CreateWorkoutViewController.h"
-#import "Workout.h"
-#import "Interval.h"
+#import "WorkoutModel.h"
+#import "IntervalModel.h"
 #import "Utilities.h"
-#import "WorkoutSvcCoreData.h"
+#import "WorkoutDatabaseSvc.h"
 
 #import "IntervalPickerViewController.h"
 
@@ -20,7 +20,7 @@
 
 @implementation CreateWorkoutViewController
 
-Workout *workout;
+WorkoutModel *workout;
 
 UIAlertController *intervalPickerAlert;
 
@@ -44,7 +44,7 @@ UIGestureRecognizer *tapper;
 
 - (void) initialize {
     
-    workout = [WorkoutSvcCoreData createManagedWorkout];
+    workout = [[WorkoutModel alloc] init];
     [self.intervalTableView setDelegate:self];
     [self.intervalTableView setDataSource:self];
     [self updateData];
@@ -86,7 +86,7 @@ UIGestureRecognizer *tapper;
 - (IBAction)saveWorkoutButton:(id)sender {
     
     if ([self validate]) {
-        [[WorkoutSvcCoreData workoutSvcSingleton] createWorkout:workout];
+        [[WorkoutDatabaseSvc workoutSvcSingleton] createWorkout:workout];
         
         if ([self delegate] != nil) {
             [[self delegate] workoutCreated:workout];
@@ -122,9 +122,10 @@ UIGestureRecognizer *tapper;
 
 # pragma mark - IntervalSelectedDelegate
 
-- (void) selectedInterval:(Interval *) interval {
+- (void) selectedInterval:(IntervalModel *) interval {
     
-    [workout addIntervalsObject:interval];
+    [workout addInterval:interval];
+//    [workout addIntervalsObject:interval];
     [self updateData];
 }
 
@@ -132,7 +133,7 @@ UIGestureRecognizer *tapper;
 
 - (void) updateData {
     [self.intervalTableView reloadData];
-    [self.workoutDurationLabel setText:[Utilities getHumanReadableDuration:[Utilities getDurationForWorkout:workout]]];
+    [self.workoutDurationLabel setText:[Utilities getHumanReadableDuration:[Utilities getDurationForWorkoutModel:workout]]];
 }
 
 /**

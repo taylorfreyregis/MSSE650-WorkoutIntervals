@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Workout.h"
+#import "WorkoutModel.h"
 
 @interface PerformWorkoutViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
@@ -20,7 +20,7 @@
 - (IBAction)pauseContinueButtonAction:(id)sender;
 - (IBAction)finishButtonAction:(id)sender;
 
-@property (nonatomic) Workout *workout;
+@property (nonatomic) WorkoutModel *workout;
 
 @property (weak, nonatomic) IBOutlet UITableView *intervalsTableView;
 

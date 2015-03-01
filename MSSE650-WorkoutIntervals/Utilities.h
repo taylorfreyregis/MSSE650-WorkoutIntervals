@@ -9,10 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "Workout.h"
 #import "Interval.h"
+#import "WorkoutModel.h"
+#import "IntervalModel.h"
 
 @interface Utilities : NSObject
 
 + (NSString *)getHumanReadableDuration:(int) seconds;
++ (int)getDurationForWorkoutModel:(WorkoutModel *)workout;
 + (int)getDurationForWorkout:(Workout *)workout;
 
 @end

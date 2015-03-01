@@ -7,7 +7,7 @@
 //
 
 #import "IntervalPickerViewController.h"
-#import "IntervalSvcCoreData.h"
+#import "IntervalDatabaseSvc.h"
 
 @interface IntervalPickerViewController ()
 
@@ -15,13 +15,13 @@
 
 @implementation IntervalPickerViewController 
 
-Interval *currentlySelectedInterval;
+IntervalModel *currentlySelectedInterval;
 NSMutableArray *intervals;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    intervals = [[IntervalSvcCoreData intervalSvcSingleton] retrieveAllIntervals];
+    intervals = [[IntervalDatabaseSvc intervalSvcSingleton] retrieveAllIntervals];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,6 +77,7 @@ NSMutableArray *intervals;
         if (selectedRow == -1) {
             selectedRow = 0;
         }
+        
         [[self delegate] selectedInterval:[intervals objectAtIndex:selectedRow]];
     }
     
