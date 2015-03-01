@@ -116,9 +116,9 @@ NSMutableArray *workouts;
 
 - (WorkoutModel *) retrieveIntervalsForWorkout: (WorkoutModel *) workout {
     
-    NSMutableArray *intervalIds;
+    NSMutableArray *intervalIds = [[NSMutableArray alloc] init];
     // Create Query
-    NSString *sqlQuery = [NSString stringWithFormat:@"SELECT Intervals.Id FROM WorkoutIntervals INNER JOIN Intervals ON Intervals.Id = WorkoutIntervals.IntervalId WHERE WorkoutIntervals.WorkoutId = %d ORDER BY IntervalOrder ASC;", workout.ident];
+    NSString *sqlQuery = [NSString stringWithFormat:@"SELECT Intervals.Id FROM Intervals INNER JOIN WorkoutIntervals ON WorkoutIntervals.IntervalId = Intervals.Id WHERE WorkoutIntervals.WorkoutId = %d ORDER BY IntervalOrder ASC;", workout.ident];
     sqlite3_stmt *statement;
     
     // Prepare and execute query

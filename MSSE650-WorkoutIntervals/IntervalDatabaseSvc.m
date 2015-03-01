@@ -92,14 +92,14 @@ NSMutableArray *intervals;
     IntervalModel *interval = nil;
     
     // Create query
-    NSString *sqlQuery = [NSString stringWithFormat:@"SELECT Interval.Id, Interval.Name, Interval.Duration FROM Intervals WHERE Interval.Id = %d", ident];
+    NSString *sqlQuery = [NSString stringWithFormat:@"SELECT Intervals.Id, Intervals.Name, Intervals.Duration FROM Intervals WHERE Intervals.Id = %d;", ident];
     sqlite3_stmt *statement;
     
     // Prepare and execute query
     if (sqlite3_prepare_v2([WorkoutDatabaseManager manager].database, [sqlQuery UTF8String], -1, &statement, nil) == SQLITE_OK) {
         
         // When done, process the last inserted row.
-        if (sqlite3_step(statement) == SQLITE_DONE) {
+        if (sqlite3_step(statement) == SQLITE_ROW) {
             
             // Pull out the values, ceate and assign to new Interval
             int ident = sqlite3_column_int(statement, 0);
@@ -112,6 +112,8 @@ NSMutableArray *intervals;
         }
         
         sqlite3_finalize(statement);
+    } else {
+        NSLog(@"Error retrieving interval. Error: %s", sqlite3_errmsg([WorkoutDatabaseManager manager].database));
     }
     return interval;
 }
@@ -119,7 +121,7 @@ NSMutableArray *intervals;
 - (IntervalModel *) updateInterval: (IntervalModel *)interval {
     
     // Create query
-    NSString *sqlQuery = [NSString stringWithFormat:@"UPDATE Intervals SET Interval.Name = \"%@\", Interval.Duration = %d WHERE Interval.Id = %d;", interval.name, interval.duration, interval.ident];
+    NSString *sqlQuery = [NSString stringWithFormat:@"UPDATE Intervals SET Intervals.Name = \"%@\", Intervals.Duration = %d WHERE Intervals.Id = %d;", interval.name, interval.duration, interval.ident];
     sqlite3_stmt *statement;
     
     // Prepare and execute query
@@ -140,7 +142,7 @@ NSMutableArray *intervals;
 - (IntervalModel *) deleteInterval: (IntervalModel *)interval {
     
     // Create query
-    NSString *sqlQuery = [NSString stringWithFormat:@"DELETE FROM Intervals WHERE Interval.Id = %d;", interval.ident];
+    NSString *sqlQuery = [NSString stringWithFormat:@"DELETE FROM Intervals WHERE Intervals.Id = %d;", interval.ident];
     sqlite3_stmt *statement;
     
     // Prepare and execute query

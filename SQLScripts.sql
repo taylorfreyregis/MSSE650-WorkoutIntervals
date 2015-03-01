@@ -11,7 +11,8 @@ Duration INTEGER
 
 -- Insert
 INSERT INTO Intervals (Name, Duration)
-VALUES ("Example Interval", 30);
+VALUES ("30 Seconds", 30);
+
 
 -- Select all intervals
 SELECT Intervals.Id, Intervals.Name, Intervals.Duration
@@ -68,8 +69,8 @@ VALUES (1, 1, 0);
 
 -- Select all intervals for a specific workout
 SELECT Intervals.Id, Intervals.Name, Intervals.Duration
-FROM WorkoutIntervals
-INNER JOIN Intervals ON Intervals.Id = WorkoutIntervals.IntervalId
+FROM Intervals
+INNER JOIN WorkoutIntervals ON WorkoutIntervals.IntervalId = Intervals.Id
 WHERE WorkoutIntervals.WorkoutId = value; -- WorkoutId
 
 -- Update Interval
