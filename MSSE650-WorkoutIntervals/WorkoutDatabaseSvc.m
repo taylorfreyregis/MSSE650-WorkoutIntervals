@@ -7,7 +7,7 @@
 //
 
 #import "WorkoutDatabaseSvc.h"
-#import "WorkoutDatabaseManager.h"
+#import "DatabaseManager.h"
 #import "IntervalDatabaseSvc.h"
 
 @implementation WorkoutDatabaseSvc
@@ -43,14 +43,14 @@ NSMutableArray *workouts;
     
     // Prepare and execute query
     // Transactions??
-    if (sqlite3_prepare_v2([WorkoutDatabaseManager manager].database, [sqlQuery UTF8String], -1, &statement, nil) == SQLITE_OK) {
+    if (sqlite3_prepare_v2([DatabaseManager manager].database, [sqlQuery UTF8String], -1, &statement, nil) == SQLITE_OK) {
         
         // When done, process the last inserted row.
         if (sqlite3_step(statement) == SQLITE_DONE) {
-            workout.ident = (int)sqlite3_last_insert_rowid([WorkoutDatabaseManager manager].database);
+            workout.ident = (int)sqlite3_last_insert_rowid([DatabaseManager manager].database);
             NSLog(@"Insert completed, id returned: %d", workout.ident);
         } else {
-            NSLog(@"Error inserting interval. Error: %s", sqlite3_errmsg([WorkoutDatabaseManager manager].database));
+            NSLog(@"Error inserting interval. Error: %s", sqlite3_errmsg([DatabaseManager manager].database));
         }
         
         sqlite3_finalize(statement);
@@ -63,14 +63,14 @@ NSMutableArray *workouts;
         
         // Prepare and execute query
         // Transactions??
-        if (sqlite3_prepare_v2([WorkoutDatabaseManager manager].database, [sqlQueryInner UTF8String], -1, &statementInner, nil) == SQLITE_OK) {
+        if (sqlite3_prepare_v2([DatabaseManager manager].database, [sqlQueryInner UTF8String], -1, &statementInner, nil) == SQLITE_OK) {
             
             // When done, process the last inserted row.
             if (sqlite3_step(statementInner) == SQLITE_DONE) {
-                int workoutIntervalId = (int)sqlite3_last_insert_rowid([WorkoutDatabaseManager manager].database);
+                int workoutIntervalId = (int)sqlite3_last_insert_rowid([DatabaseManager manager].database);
                 NSLog(@"Insert completed for workout: %d interval: %d intervalOrder: %d workoutInterval %d", workout.ident, ((IntervalModel *)workout.intervals[i]).ident, i, workoutIntervalId);
             } else {
-                NSLog(@"Error inserting interval. Error: %s", sqlite3_errmsg([WorkoutDatabaseManager manager].database));
+                NSLog(@"Error inserting interval. Error: %s", sqlite3_errmsg([DatabaseManager manager].database));
             }
             
             sqlite3_finalize(statementInner);
@@ -88,7 +88,7 @@ NSMutableArray *workouts;
     sqlite3_stmt *statement;
     
     // Prepare and execute query
-    if (sqlite3_prepare_v2([WorkoutDatabaseManager manager].database, [sqlQuery UTF8String], -1, &statement, nil) == SQLITE_OK) {
+    if (sqlite3_prepare_v2([DatabaseManager manager].database, [sqlQuery UTF8String], -1, &statement, nil) == SQLITE_OK) {
         
         // Iterate through each row
         while (sqlite3_step(statement) == SQLITE_ROW) {
@@ -104,7 +104,7 @@ NSMutableArray *workouts;
         }
         sqlite3_finalize(statement);
     } else {
-        NSLog(@"Error retrieving intervals. Error: %s", sqlite3_errmsg([WorkoutDatabaseManager manager].database));
+        NSLog(@"Error retrieving intervals. Error: %s", sqlite3_errmsg([DatabaseManager manager].database));
     }
     
     for (WorkoutModel *workout in workouts) {
@@ -122,7 +122,7 @@ NSMutableArray *workouts;
     sqlite3_stmt *statement;
     
     // Prepare and execute query
-    if (sqlite3_prepare_v2([WorkoutDatabaseManager manager].database, [sqlQuery UTF8String], -1, &statement, nil) == SQLITE_OK) {
+    if (sqlite3_prepare_v2([DatabaseManager manager].database, [sqlQuery UTF8String], -1, &statement, nil) == SQLITE_OK) {
         
         // Iterate through each row
         while (sqlite3_step(statement) == SQLITE_ROW) {
@@ -135,7 +135,7 @@ NSMutableArray *workouts;
         }
         sqlite3_finalize(statement);
     } else {
-        NSLog(@"Error retrieving intervals. Error: %s", sqlite3_errmsg([WorkoutDatabaseManager manager].database));
+        NSLog(@"Error retrieving intervals. Error: %s", sqlite3_errmsg([DatabaseManager manager].database));
     }
     
     for (NSNumber *number in intervalIds) {

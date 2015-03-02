@@ -92,6 +92,7 @@ UIGestureRecognizer *tapper;
 
 # pragma mark - UITextFieldDelegate
 
+// Forces numeric values
 - (BOOL) textField:(UITextField *) textField shouldChangeCharactersInRange:(NSRange) range replacementString:(NSString *) string {
     
     if (textField == self.hoursTextField) {

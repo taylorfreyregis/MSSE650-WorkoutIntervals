@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "sqlite3.h"
 
-@interface WorkoutDatabaseManager : NSObject
+@interface DatabaseManager : NSObject
 
 @property (atomic) sqlite3 *database;
 
-+(WorkoutDatabaseManager *)manager;
++(DatabaseManager *)manager;
 
 @end

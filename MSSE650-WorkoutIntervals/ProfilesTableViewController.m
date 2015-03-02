@@ -1,21 +1,20 @@
 //
-//  WorkoutsTableViewController.m
+//  ProfilesTableViewController.m
 //  MSSE650-WorkoutIntervals
 //
-//  Created by Taylor Frey on 2/1/15.
+//  Created by Taylor Frey on 3/1/15.
 //  Copyright (c) 2015 Taylor Frey. All rights reserved.
 //
 
-#import "WorkoutsTableViewController.h"
-#import "PerformWorkoutViewController.h"
-#import "WorkoutModel.h"
-#import "WorkoutDatabaseSvc.h"
+#import "ProfilesTableViewController.h"
+#import "ProfileModel.h"
+#import "ProfileDatabaseSvc.h"
 
-@interface WorkoutsTableViewController ()
+@interface ProfilesTableViewController ()
 
 @end
 
-@implementation WorkoutsTableViewController
+@implementation ProfilesTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,13 +24,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = false;
-    _workouts = [NSMutableArray arrayWithArray:[[WorkoutDatabaseSvc workoutSvcSingleton] retrieveAllWorkouts]];
+    _profiles = [NSMutableArray arrayWithArray:[[ProfileDatabaseSvc profileSvcSingleton] retrieveAllProfiles]];
     [self.tableView reloadData];
 }
 
@@ -40,22 +37,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-# pragma mark - TableView
+
+#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [_workouts count];
+    return [_profiles count];
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *simpleTableIdentifier = @"WorkoutIdentifier";
+    static NSString *simpleTableIdentifier = @"ProfileTableViewCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
@@ -63,15 +59,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    WorkoutModel *workout = [_workouts objectAtIndex:indexPath.row];
-    cell.textLabel.text = workout.name;
-
+    ProfileModel *profile = [_profiles objectAtIndex:indexPath.row];
+    cell.textLabel.text = profile.name;
+    
     return cell;
 }
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [self performSegueWithIdentifier:@"WorkoutsTableToPerformWorkout" sender:self];
-//}
 
 /*
 // Override to support conditional editing of the table view.
@@ -108,49 +100,21 @@
 */
 
 
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    
-    NSString *identifier = [segue identifier];
-    
-    // Verify the segue via the identifier
-    if ([identifier isEqualToString:@"WorkoutsToCreateWorkout"]) {
-        
-        CreateWorkoutViewController *destination = segue.destinationViewController;
-        
-        [destination setDelegate: self];
-    } else if ([identifier isEqualToString:@"WorkoutsToPerformWorkout"]) {
-        PerformWorkoutViewController *destination = segue.destinationViewController;
-        
-        WorkoutModel *workout = [_workouts objectAtIndex:[[self tableView] indexPathForSelectedRow].row];
-        
-        destination.workout = workout;
-    }
-}
-
 # pragma mark - IBActions
 
 - (IBAction)doneButton:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:true];
 }
 
-# pragma mark - WorkoutCreatedDelegate
 
-- (void) workoutCreated:(WorkoutModel *) workout {
-    
-    // No longer necessary now that we are pulling out of a central repo? aka SQL
-    [self updateData];
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
-
-# pragma mark - WorkoutsTableViewController
-
-- (void) updateData {
-    
-//    [self.workoutTableView reloadData];
-}
+*/
 
 @end

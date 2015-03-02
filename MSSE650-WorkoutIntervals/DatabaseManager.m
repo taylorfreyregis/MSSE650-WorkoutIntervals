@@ -6,18 +6,18 @@
 //  Copyright (c) 2015 Taylor Frey. All rights reserved.
 //
 
-#import "WorkoutDatabaseManager.h"
+#import "DatabaseManager.h"
 #import "Constants.h"
 
 // Since I plan on using the same database for two separate models, I've made a singleton access for it.
-@implementation WorkoutDatabaseManager
+@implementation DatabaseManager
 
-static WorkoutDatabaseManager* manager;
+static DatabaseManager* manager;
 
 //Create Singleton instance of the database. I like this approach better than the other
-+(WorkoutDatabaseManager *)manager {
++(DatabaseManager *)manager {
     if (manager == nil) {
-        manager = [[WorkoutDatabaseManager alloc] init];
+        manager = [[DatabaseManager alloc] init];
     }
     return manager;
 }

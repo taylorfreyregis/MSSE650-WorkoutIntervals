@@ -10,13 +10,14 @@
 #define MSSE650_WorkoutIntervals_Constants_h
 
 #define NUMERIC_VALUES @"0123456789"
-#define DATABASE_NAME @"WorkoutDatabase"
+#define DATABASE_NAME @"Database"
 
 #define INTERVAL @"Interval"
 #define WORKOUT @"Workout"
 #define IDENT @"ident"
 #define NAME @"name"
 #define DURATION @"duration"
+#define AGE @"age"
 
 
 #endif

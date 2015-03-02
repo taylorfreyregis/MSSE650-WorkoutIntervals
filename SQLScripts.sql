@@ -83,26 +83,10 @@ WHERE; -- NOT OPTIONAL! Otherwise will delete all elements...
 
 -- Profile
 
-CREATE TABLE UserProfile (
+CREATE TABLE Profiles (
 Id INTEGER PRIMARY KEY AUTOINCREMENT,
-Name VARCHAR(50));
-
-
-
--- Weight
-
-CREATE TABLE UserWeight (
-Id Integer PRIMARY KEY AUTOINCREMENT,
-UserProfileId INTEGER,
-WeightLbs INTEGER,
-FOREIGN KEY (UserProfileId) REFERENCES UserProfile(Id));
-
-CREATE TABLE UserWorkout (
-Id INTEGER PRIMARY KEY AUTOINCREMENT,
-UserProfileId INTEGER,
-WorkoutId INTEGER,
-FOREIGN KEY UserProfileId REFERENCES UserProfile(Id),
-FOREIGN KEY WorkoutId REFERENCES Workout(Id));
+Name VARCHAR(50),
+Age INTEGER);
 
 
 
