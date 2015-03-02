@@ -39,6 +39,7 @@
 		FACFD0241AA3BBE6003C3122 /* CreateProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACFD0231AA3BBE6003C3122 /* CreateProfileViewController.m */; };
 		FACFD0261AA3BDBB003C3122 /* Database.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = FACFD0251AA3BDBB003C3122 /* Database.sqlite3 */; };
 		FACFD0291AA4045E003C3122 /* ProfileWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACFD0281AA4045E003C3122 /* ProfileWeightViewController.m */; };
+		FACFD02B1AA42B80003C3122 /* ProfileDatabaseSvcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FACFD02A1AA42B80003C3122 /* ProfileDatabaseSvcTests.m */; };
 		FAFE7A961A9158800079272E /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFE7A951A9158800079272E /* DatabaseManager.m */; };
 		FAFE7A981A915D3F0079272E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFE7A971A915D3F0079272E /* libsqlite3.dylib */; };
 		FAFE7A9B1A916D6B0079272E /* IntervalDatabaseSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFE7A9A1A916D6B0079272E /* IntervalDatabaseSvc.m */; };
@@ -123,6 +124,7 @@
 		FACFD0251AA3BDBB003C3122 /* Database.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Database.sqlite3; sourceTree = "<group>"; };
 		FACFD0271AA4045E003C3122 /* ProfileWeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileWeightViewController.h; sourceTree = "<group>"; };
 		FACFD0281AA4045E003C3122 /* ProfileWeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileWeightViewController.m; sourceTree = "<group>"; };
+		FACFD02A1AA42B80003C3122 /* ProfileDatabaseSvcTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileDatabaseSvcTests.m; sourceTree = "<group>"; };
 		FAFE7A941A9158800079272E /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseManager.h; sourceTree = "<group>"; };
 		FAFE7A951A9158800079272E /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseManager.m; sourceTree = "<group>"; };
 		FAFE7A971A915D3F0079272E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -216,6 +218,7 @@
 				FAC20B131A91BE71008454AF /* WorkoutDatabaseSvcTests.m */,
 				FA527FFD1A9AB92100F94503 /* IntervalCoreDataTests.m */,
 				FA527FFF1A9ADE4500F94503 /* WorkoutCoreDataTests.m */,
+				FACFD02A1AA42B80003C3122 /* ProfileDatabaseSvcTests.m */,
 			);
 			path = "MSSE650-WorkoutIntervalsTests";
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 			files = (
 				74DEEB811A8881490018FDC3 /* IntervalsSvcArchiveTests.m in Sources */,
 				74DEEB861A8889620018FDC3 /* WorkoutsSvcArchiveTests.m in Sources */,
+				FACFD02B1AA42B80003C3122 /* ProfileDatabaseSvcTests.m in Sources */,
 				FA5280001A9ADE4500F94503 /* WorkoutCoreDataTests.m in Sources */,
 				FAFE7AB61A91ADA20079272E /* IntervalDatabaseSvcTests.m in Sources */,
 				FA527FFE1A9AB92100F94503 /* IntervalCoreDataTests.m in Sources */,
