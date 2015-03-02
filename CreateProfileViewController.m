@@ -50,7 +50,7 @@ UIGestureRecognizer *tapper;
 // Forces numeric values
 - (BOOL) textField:(UITextField *) textField shouldChangeCharactersInRange:(NSRange) range replacementString:(NSString *) string {
     
-    if (textField == self.profileAgeTextField) {
+    if (textField == self.profileAgeTextField || textField == self.profileInitialWeight) {
         
         // Numeric hours ( < 24) only
         
@@ -79,13 +79,16 @@ UIGestureRecognizer *tapper;
     
     if ([self validate]) {
         
-        // Create Interval
+        // Create Profile
         ProfileModel *profile = [[ProfileModel alloc] init];
         profile.name = self.profileNameTextField.text;
         profile.age = [self.profileAgeTextField.text intValue];
+        int weight = [self.profileInitialWeight.text intValue];
         
-        // Save Interval
+        // Save Profile
         [[ProfileDatabaseSvc profileSvcSingleton] createProfile:profile];
+        
+        [[ProfileDatabaseSvc profileSvcSingleton] addWeightMeasurement:weight ForProfile:profile];
     }
     
     [self.navigationController popViewControllerAnimated:true];
@@ -112,6 +115,12 @@ UIGestureRecognizer *tapper;
     int age = [self.profileAgeTextField.text intValue];
     
     if (age <= 0) {
+        return false;
+    }
+    
+    int weight = [self.profileInitialWeight.text intValue];
+    
+    if (weight <= 0) {
         return false;
     }
     

@@ -18,4 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *profileAgeTextField;
 
+@property (weak, nonatomic) IBOutlet UITextField *profileInitialWeight;
+
 @end

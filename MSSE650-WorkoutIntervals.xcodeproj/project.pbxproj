@@ -38,6 +38,7 @@
 		FACFD0211AA3B47D003C3122 /* ProfileDatabaseSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = FACFD0201AA3B47D003C3122 /* ProfileDatabaseSvc.m */; };
 		FACFD0241AA3BBE6003C3122 /* CreateProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACFD0231AA3BBE6003C3122 /* CreateProfileViewController.m */; };
 		FACFD0261AA3BDBB003C3122 /* Database.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = FACFD0251AA3BDBB003C3122 /* Database.sqlite3 */; };
+		FACFD0291AA4045E003C3122 /* ProfileWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACFD0281AA4045E003C3122 /* ProfileWeightViewController.m */; };
 		FAFE7A961A9158800079272E /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFE7A951A9158800079272E /* DatabaseManager.m */; };
 		FAFE7A981A915D3F0079272E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFE7A971A915D3F0079272E /* libsqlite3.dylib */; };
 		FAFE7A9B1A916D6B0079272E /* IntervalDatabaseSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFE7A9A1A916D6B0079272E /* IntervalDatabaseSvc.m */; };
@@ -120,6 +121,8 @@
 		FACFD0221AA3BBE6003C3122 /* CreateProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateProfileViewController.h; sourceTree = "<group>"; };
 		FACFD0231AA3BBE6003C3122 /* CreateProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateProfileViewController.m; sourceTree = "<group>"; };
 		FACFD0251AA3BDBB003C3122 /* Database.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Database.sqlite3; sourceTree = "<group>"; };
+		FACFD0271AA4045E003C3122 /* ProfileWeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileWeightViewController.h; sourceTree = "<group>"; };
+		FACFD0281AA4045E003C3122 /* ProfileWeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileWeightViewController.m; sourceTree = "<group>"; };
 		FAFE7A941A9158800079272E /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseManager.h; sourceTree = "<group>"; };
 		FAFE7A951A9158800079272E /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseManager.m; sourceTree = "<group>"; };
 		FAFE7A971A915D3F0079272E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -274,6 +277,8 @@
 				FACFD0191AA3AAF5003C3122 /* ProfilesTableViewController.m */,
 				FACFD0221AA3BBE6003C3122 /* CreateProfileViewController.h */,
 				FACFD0231AA3BBE6003C3122 /* CreateProfileViewController.m */,
+				FACFD0271AA4045E003C3122 /* ProfileWeightViewController.h */,
+				FACFD0281AA4045E003C3122 /* ProfileWeightViewController.m */,
 			);
 			name = ViewControllers;
 			path = ..;
@@ -436,6 +441,7 @@
 				FAFE7AAC1A91907B0079272E /* WorkoutsTableViewController.m in Sources */,
 				FAAA85CB1A7578C400A65F9D /* IntervalSvcCache.m in Sources */,
 				FAFE7A9B1A916D6B0079272E /* IntervalDatabaseSvc.m in Sources */,
+				FACFD0291AA4045E003C3122 /* ProfileWeightViewController.m in Sources */,
 				FA7C98391A99B06D00E63563 /* Model.xcdatamodeld in Sources */,
 				FAAA85CF1A7584E300A65F9D /* WorkoutSvcCache.m in Sources */,
 				7470D77D1A72E440006C462E /* AppDelegate.m in Sources */,

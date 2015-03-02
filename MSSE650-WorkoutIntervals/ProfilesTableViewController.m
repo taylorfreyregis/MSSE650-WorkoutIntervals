@@ -9,6 +9,7 @@
 #import "ProfilesTableViewController.h"
 #import "ProfileModel.h"
 #import "ProfileDatabaseSvc.h"
+#import "ProfileWeightViewController.h"
 
 @interface ProfilesTableViewController ()
 
@@ -107,14 +108,19 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"ProfilesToProfileWeightView"]) {
+        ProfileWeightViewController *destination = segue.destinationViewController;
+        destination.profile = [self.profiles objectAtIndex:[[self tableView] indexPathForSelectedRow].row];
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

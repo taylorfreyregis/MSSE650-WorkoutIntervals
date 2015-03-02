@@ -89,5 +89,10 @@ Name VARCHAR(50),
 Age INTEGER);
 
 
-
+CREATE TABLE ProfileWeights (
+Id INTEGER PRIMARY KEY AUTOINCREMENT,
+Weight INTEGER,
+EntryDate DATE DEFAULT (DATE('now','localtime')),
+ProfileId INTEGER,
+FOREIGN KEY (ProfileId) REFERENCES Profiles(Id));
 

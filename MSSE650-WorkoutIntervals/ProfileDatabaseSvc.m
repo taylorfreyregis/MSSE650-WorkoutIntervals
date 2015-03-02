@@ -161,5 +161,57 @@ NSMutableArray *profiles;
     return profile;
 }
 
+- (bool) addWeightMeasurement:(int) weight ForProfile:(ProfileModel *) profile {
+    
+    bool result = false;
+    
+    // Create query - Date automatically added
+    NSString *sqlQuery = [NSString stringWithFormat:@"INSERT INTO ProfileWeights (Weight, ProfileId) VALUES (%d, %d);", weight, profile.ident];
+    sqlite3_stmt *statement;
+    
+    // Prepare and execute query
+    if (sqlite3_prepare_v2([DatabaseManager manager].database, [sqlQuery UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        
+        // When done, process the last inserted row.
+        if (sqlite3_step(statement) == SQLITE_DONE) {
+            result = true;
+        } else {
+            NSLog(@"Error inserting profile. Error: %s", sqlite3_errmsg([DatabaseManager manager].database));
+        }
+        
+        sqlite3_finalize(statement);
+    }
+    
+    return result;
+}
+
+- (NSMutableDictionary *)retrieveAllWeightsForProfile:(ProfileModel *) profile {
+    
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    
+    // Create Query
+    NSString *sqlQuery = [NSString stringWithFormat:@"SELECT ProfileWeights.Weight, ProfileWeights.EntryDate FROM ProfileWeights WHERE ProfileWeights.ProfileId = %d;", profile.ident];
+    sqlite3_stmt *statement;
+    
+    // Prepare and execute query
+    if (sqlite3_prepare_v2([DatabaseManager manager].database, [sqlQuery UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        
+        // Iterate through each row
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            
+            // Pull out the values, ceate and assign to new Interval, add to internal array
+            int weight = sqlite3_column_int(statement, 0);
+            char *dateChars = (char *) sqlite3_column_text(statement, 1);
+            NSString *date = [[NSString alloc] initWithUTF8String:dateChars];
+            [dict setValue:[NSNumber numberWithInt:weight] forKey:date];
+            
+            NSLog(@"Retrieved weight %d for date: %@", weight, date);
+        }
+        sqlite3_finalize(statement);
+    } else {
+        NSLog(@"Error retrieving intervals. Error: %s", sqlite3_errmsg([DatabaseManager manager].database));
+    }
+    return dict;
+}
 
 @end

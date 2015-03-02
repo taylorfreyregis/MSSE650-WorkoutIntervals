@@ -12,5 +12,7 @@
 @interface ProfileDatabaseSvc : NSObject <ProfileSvc>
 
 - (ProfileModel *)retrieveProfileWithId:(int) ident;
+- (bool) addWeightMeasurement:(int) weight ForProfile:(ProfileModel *) profile;
+- (NSMutableDictionary *)retrieveAllWeightsForProfile:(ProfileModel *) profile;
 
 @end
